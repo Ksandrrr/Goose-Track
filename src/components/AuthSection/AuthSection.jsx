@@ -1,9 +1,13 @@
 import Style from "./AuthSection.module.scss"
-import Logo from "../../img/MainPage/GOOSE2xLogo.png"
+import LogoL from "../../img/MainPage/GOOSE2xLogo.png"
+import LogoS from "../../img/MainPage/GOOSE-Desktop.png"
 export const AuthSection = () => {
 
     return <section className={Style.AuthSection}>
-        <img src={Logo} alt="LogoGus" />
+        <picture>
+            <source media="(min-width: 768px)" srcSet={LogoL} />
+            <img src={LogoS} alt="logoGoos" />
+          </picture>
         <h1 className={Style.Title}>GooseTrack</h1>
         <div className={Style.wrapperBtn}>
         <button className={Style.Sign}> <p>Sign up</p> </button>

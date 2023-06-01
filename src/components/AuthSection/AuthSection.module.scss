@@ -1,47 +1,54 @@
 @import '/src/styles/styles.scss';
 .AuthSection {
-    display: flex;
-    // justify-content: center;
-    align-items: center;
-    flex-direction: column;
-width: 100%;
-height: 100vh;
-background-color: getColor('full-blue');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: getColor('full-blue');
+
 }
-.logo {
-width: 150px;
-height: 149px;
-}
+
 .Title {
-    font-family: Coolvetica;
-font-size: 44px;
-text-align: center;
-color: getColor('full-white');
-@media screen and (min-width: 420px) {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 44px;
+  text-align: center;
+  color: getColor('full-white');
+  @media screen and (min-width: 420px) {
     font-size: 70px;
-}
-@media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 768px) {
     font-size: 120px;
-}
+  }
 }
 .wrapperBtn {
-display: flex;
-flex-direction: column-reverse;
-gap: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 24px;
+@media screen and (min-width: 520px) {
+        flex-direction: row;
+    }
 }
 .Sign {
-    cursor: pointer;
-background-color: transparent;
-border: none;
-& p {
-text-decoration: solid;
-}
+ 
+  cursor: pointer;
+  color: getColor('full-white');
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  & p {
+    text-decoration: underline;
+  }
 }
 .LogIn {
-    cursor: pointer;
-padding: 14px 32px;
-background: #FFFFFF;
-    box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
-    border-radius: 16px;
-    border: none;
+
+  cursor: pointer;
+  padding: 14px 32px;
+  font-size: 14px;
+  background: #ffffff;
+  box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
+  border-radius: 16px;
+  border: none;
+  color: getColor('full-blue');
 }

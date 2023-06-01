@@ -1,0 +1,84 @@
+@import '/src/styles/styles.scss';
+
+.Calendar {
+@media screen and (min-width: 768px) {
+        width: 275px;
+    }
+}
+.CalendarWraper {
+    padding-top: 60px;
+
+@media screen and (min-width: 1200px) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.SideBarWraper {
+padding-top: 60px;
+}
+.SideBar {
+@media screen and (min-width: 768px) {
+       width: 275px;
+       float: right;
+    }
+}
+.AllWraper {
+padding-top: 60px;
+@media screen and (min-width: 1200px) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.Description {
+padding-bottom: 40px;
+}
+.Number {
+  display: block;
+  font-weight: 700;
+  font-size: 80px;
+  color: getColor('full-blue');
+  @media screen and (min-width: 768px) {
+    font-size: 104px;
+  }
+}
+.Title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 32px;
+    color: getColor('full-blue');
+    border-radius: 44px;
+    padding: 0 10px 0 10px ;
+    margin-bottom: 10px;
+    display: inline-block;
+    background-color: getColor('light-blue');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+@media screen and (min-width: 768px) {
+    .Title {
+        font-size: 44px;
+    }
+}
+.Wiew {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 32px;
+  background-color: getColor('full-black');
+  margin-bottom: 10px;
+  @media screen and (min-width: 768px) {
+    font-size: 44px;
+  }
+}
+.CalendarIMG {
+  border-radius: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (min-width: 768px) {
+      border-radius: 100px;
+      margin-left: 0;
+        margin-right: 0;
+    }
+
+}
