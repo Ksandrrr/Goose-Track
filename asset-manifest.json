@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Goose-Track/static/css/main.07273cc8.css",
+    "main.js": "/Goose-Track/static/js/main.68873f81.js",
+    "static/media/GOOSE2xLogo.png": "/Goose-Track/static/media/GOOSE2xLogo.3c0470b19aa18aaef0d8.png",
+    "index.html": "/Goose-Track/index.html",
+    "main.07273cc8.css.map": "/Goose-Track/static/css/main.07273cc8.css.map",
+    "main.68873f81.js.map": "/Goose-Track/static/js/main.68873f81.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.07273cc8.css",
+    "static/js/main.68873f81.js"
+  ]
+}
