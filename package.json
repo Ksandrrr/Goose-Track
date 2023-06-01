@@ -1,8 +1,8 @@
 {
-  "name": "react-homework-template",
+  "name": "Goose-Track",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ksandrrr.github.io/Goose-Track/",
+  "homepage": "https://Ksandrrr.github.io/Goose-Track/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
