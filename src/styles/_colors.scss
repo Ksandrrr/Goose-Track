@@ -1,0 +1,18 @@
+$colors: (
+    full-white: #fdf7f2,
+    dark: #13151A,
+    full-blue: #3E85F3,
+    light-blue: #DCEBF7,
+);
+
+@function getColor($key) {
+    @return map-get($colors, $key);
+}
+
+// How to use:
+// .button {
+//   color: getColor('primary');
+//   background-color: getColor('background');
+// }
+//  Вместо привычной переменной указываем функцию -- getColor('name') -- , где в атрибут 'name' нужно передать имя переменной.
+//  Польза от этого более заметна, если будет больше карт переменных.
