@@ -1,6 +1,6 @@
 import Style from "./AuthSection.module.scss"
 import LogoL from "../../img/MainPage/GOOSE2xLogo.png"
-import LogoS from "../../img/MainPage/GOOSE-MOBILE.png"
+// import LogoS from "../../img/MainPage/GOOSE-MOBILE.png"
 export const AuthSection = () => {
 
     return <section className={Style.AuthSection}>
