@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Goose-Track/static/css/main.5b0a1f0c.css",
-    "main.js": "/Goose-Track/static/js/main.089d4be9.js",
+    "main.css": "/Goose-Track/static/css/main.41a0bfb6.css",
+    "main.js": "/Goose-Track/static/js/main.2d7123bc.js",
     "static/media/imageCalendar-TAB.jpg": "/Goose-Track/static/media/imageCalendar-TAB.d9c0e416285c898aca03.jpg",
     "static/media/imageCalendar-DESK.jpg": "/Goose-Track/static/media/imageCalendar-DESK.6bd137a51a7a01a967bc.jpg",
     "static/media/imageAll-TAB.jpg": "/Goose-Track/static/media/imageAll-TAB.1af53e88069006bfef40.jpg",
@@ -13,11 +13,11 @@
     "static/media/imageAll-PHONE.jpg": "/Goose-Track/static/media/imageAll-PHONE.d27409b855fa9ea93d76.jpg",
     "static/media/GOOSE2xLogo.png": "/Goose-Track/static/media/GOOSE2xLogo.3c0470b19aa18aaef0d8.png",
     "index.html": "/Goose-Track/index.html",
-    "main.5b0a1f0c.css.map": "/Goose-Track/static/css/main.5b0a1f0c.css.map",
-    "main.089d4be9.js.map": "/Goose-Track/static/js/main.089d4be9.js.map"
+    "main.41a0bfb6.css.map": "/Goose-Track/static/css/main.41a0bfb6.css.map",
+    "main.2d7123bc.js.map": "/Goose-Track/static/js/main.2d7123bc.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b0a1f0c.css",
-    "static/js/main.089d4be9.js"
+    "static/css/main.41a0bfb6.css",
+    "static/js/main.2d7123bc.js"
   ]
 }
