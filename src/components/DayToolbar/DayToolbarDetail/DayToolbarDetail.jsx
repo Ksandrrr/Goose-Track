@@ -2,6 +2,7 @@ import Style from '../DayToolbar.module.scss';
 import { useMediaQuery } from 'react-responsive';
 import { useSelector } from 'react-redux';
 
+
 export const DayToolbarDetail = ({ day, month }) => {
 
   const theme = useSelector(state => state.theme.value);

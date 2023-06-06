@@ -45,12 +45,12 @@ export const Navigation = () => {
               Calendar
             </NavLink>
           </nav>
-          <button className={Style.LogOut}>
+          <button className={Style.LogOut}><NavLink to="/">
             Log out
             <IconContext.Provider value={{ size: '16px' }}>
               <MdLogout />
             </IconContext.Provider>
-          </button>
+          </NavLink></button>
 
     </>
   );

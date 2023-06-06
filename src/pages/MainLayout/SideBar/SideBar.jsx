@@ -9,6 +9,7 @@ import { useMediaQuery } from 'react-responsive';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { IconContext } from 'react-icons';
 import { CgClose } from 'react-icons/cg';
+import { NavLink } from 'react-router-dom';
 import './SideBar.scss';
 
 export const SideBar = () => {

@@ -1,6 +1,6 @@
 import styles from './RegistrPage.module.scss';
 import { LuLogOut } from 'react-icons/lu';
-
+import { NavLink } from 'react-router-dom';
 export const RegisterPage = () => {
   return (
     <div className={styles.container}>
@@ -43,15 +43,15 @@ export const RegisterPage = () => {
             placeholder="Enter password"
           />
         </form>
-        <button type="submit" className={styles.btn}>
+         <NavLink to="/calendar"><button type="submit" className={styles.btn}>
             <p className={styles.textBtn}>Sign Up</p>
             <LuLogOut className={styles.icon} />
-          </button>
+          </button></NavLink>
       </div>
       <div className={styles.logInButton}>
-        <a className={styles.link} href="/login">
+         <NavLink to="/login"><a className={styles.link} href="/login">
           Log in
-        </a>
+        </a></NavLink>
       </div>
     </div>
   );

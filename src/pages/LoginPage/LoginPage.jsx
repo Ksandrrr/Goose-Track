@@ -1,6 +1,7 @@
 import styles from './LoginPage.module.scss';
 import { LuLogOut } from 'react-icons/lu';
 // import Logo from '../../img/SignIn/Group.png';
+import { NavLink } from 'react-router-dom';
 
 export const Login = () => {
   return (
@@ -32,16 +33,16 @@ export const Login = () => {
             placeholder="Enter password"
           />
         </form>
-        <button type="submit" className={styles.btn}>
+        <NavLink to="/calendar"><button type="submit" className={styles.btn}>
           <p className={styles.textBtn}>Log in</p>
           <LuLogOut className={styles.icon} />
-        </button>
+        </button></NavLink>
       </div>
-      <div className={styles.logInButton}>
+       <NavLink to="/registr"><div className={styles.logInButton}>
         <a className={styles.link} href="/login">
           Sign Up
         </a>
-      </div>
+      </div></NavLink>
     </div>
   );
 };
