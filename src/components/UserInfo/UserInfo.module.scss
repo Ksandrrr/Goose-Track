@@ -1,0 +1,42 @@
+@import '/src/styles/styles.scss';
+.UserWrapper {
+display: flex;
+align-items: center;
+gap: 15px;
+
+}
+.UserPhoto {
+width: 44px;
+height: 44px;
+border-radius: 50%;
+background-color: #343434;
+}
+.UserName {
+    font-weight: 700;
+    font-size: 14px;
+@media screen and (min-width: 768px) {
+        font-size: 18px;
+    }
+}
+.UserNameDark {
+font-weight: 700;
+    font-size: 14px;
+color: getColor("full-white");
+    @media screen and (min-width: 768px) {
+        font-size: 18px;
+    }
+}
+.UserFeedback {
+padding: 12px 32px;
+border: none;
+border-radius: 14px;
+background-color: getColor('full-blue');
+color: getColor("full-white");
+margin-right: 10px;
+}
+.ThemBtn {
+cursor: pointer;
+border: none;
+background-color: transparent;
+
+}

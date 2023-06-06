@@ -1,0 +1,92 @@
+@import '/src/styles/styles.scss';
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.calendarColumns {
+  display: grid;
+  grid-template-columns: repeat(6, 47px);
+  grid-template-rows: repeat(6, 93px);
+  outline: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  width: calc(47px * 6);
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (min-width: 375px) {
+    grid-template-columns: repeat(7, 47px);
+    grid-template-rows: repeat(5, 93px);
+    width: calc(47px * 7);
+  }
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(7, 94px);
+    grid-template-rows: repeat(5, 146px);
+    width: calc(94px * 7);
+  }
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(7, 145px);
+    grid-template-rows: repeat(5, 106px);
+    width: calc(145px * 7);
+  }
+}
+
+.calendarColumn {
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  padding-top: 8px;
+  padding-right: 8px;
+  outline: 1px solid rgba(220, 227, 229, 0.5);
+@media screen and (min-width: 1200px) {
+        padding-top: 15px;
+        padding-right: 15px;
+    }
+}
+.calendarColumnDark{
+background-color: #21222C;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  padding-top: 8px;
+  padding-right: 8px;
+  outline: 1px solid rgba(255, 255, 255, 0.15);
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 15px;
+    padding-right: 15px;
+  }
+}
+.empty {
+  background-color: #fff;
+}
+.emptyDark {
+background-color: #21222C;
+outline: 1px solid rgba(255, 255, 255, 0.15);
+}
+.today {
+padding-top: 6px;
+padding-right: 6px;
+@media screen and (min-width: 1200px) {
+padding-top: 9px;
+  padding-right: 8px;
+  }
+}
+.today p{
+    padding: 2px 5px;
+    border-radius: 8px;
+background-color: getColor('full-blue');
+color: white;
+@media screen and (min-width: 1200px) {
+padding: 5px 10px;
+ 
+  }
+}
+.calendarColumnTextDark {
+color: white;
+}

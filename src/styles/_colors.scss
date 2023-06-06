@@ -3,6 +3,8 @@ $colors: (
     dark: #13151A,
     full-blue: #3E85F3,
     light-blue: #DCEBF7,
+    dark-light-theme: rgba(23, 24, 32, 1),
+    dark-full-theme: #13151A,
 );
 
 @function getColor($key) {

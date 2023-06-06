@@ -1,0 +1,40 @@
+
+.DayToolbarWrapper {
+display: flex;
+align-items: center;
+justify-content: space-around;
+outline: 1px solid rgba(220, 227, 229, 0.8);
+height: 50px;
+background-color: white;
+border-radius: 8px;
+margin-bottom: 14px;
+
+}
+.DayToolbarWrapperDark {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    outline: 1px solid rgba(255, 255, 255, 0.15);
+    height: 50px;
+    background-color: #21222C;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    & .Day {
+    color: white;
+    }
+}
+.Day {
+color: rgb(0, 0, 0);
+}
+.WrapperDetail {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.DayDetail {
+    color: rgba(250, 250, 250, 0.3);
+}
+.Number {
+color: white;
+}

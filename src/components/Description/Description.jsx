@@ -1,16 +1,14 @@
-
-
 import { Calendar } from './Calendar';
 import { SideBar } from './SideBar';
-import { Allin } from "./All"
-import {Reviews} from "../ReviewsSlider/ReviewsSlider"
+import { Allin } from './All';
+import { Reviews } from '../ReviewsSlider/ReviewsSlider';
 export const Description = () => {
   return (
     <section className="container">
       <Calendar />
-          <SideBar />
+      <SideBar />
       <Allin />
-      <Reviews/>
+      <Reviews />
     </section>
   );
 };

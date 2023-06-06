@@ -3,6 +3,8 @@ import LogoL from "../../img/MainPage/GOOSE2xLogo.png"
 // import LogoS from "../../img/MainPage/GOOSE-MOBILE.png"
 import { IconContext } from 'react-icons';
 import { FiLogIn } from 'react-icons/fi';
+
+
 export const AuthSection = () => {
 
     return <section className={Style.AuthSection}>

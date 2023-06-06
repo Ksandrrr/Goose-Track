@@ -6,13 +6,13 @@ import { BsArrowLeft } from 'react-icons/bs';
 import { BsArrowRight } from 'react-icons/bs';
 
 
-import { Navigation, Pagination, A11y } from 'swiper';
+import { Navigation, Pagination, A11y,Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css';
-
+import 'swiper/css/scrollbar';
+import "swiper/css/autoplay"
 export const Reviews = () => {
     const screenWidth = window.screen.width
   return (
@@ -21,10 +21,14 @@ export const Reviews = () => {
 
       <div className={Style.wrapperReviews}>
         <Swiper
-          modules={[Navigation, Pagination, A11y]}
+          modules={[Navigation, Pagination, A11y,Autoplay]}
           spaceBetween={50}
           slidesPerView={screenWidth <= 900 ? 1 : 2}
-          autoplay={true}
+          autoplay={{
+          delay: 5000
+          }}
+          // loop={true}
+          loopAdditionalSlides={2}
           navigation={{
             prevEl: '#prev',
             nextEl: '#next',
@@ -36,7 +40,7 @@ export const Reviews = () => {
                 <p className={Style.PhotoUser}></p>
                 <div>
                   <p className={Style.NameUser}>Olena Doe </p>
-                  <StarsReviews/>
+                  <StarsReviews stars={4} />
                 </div>
               </div>
               <div>
@@ -54,7 +58,7 @@ export const Reviews = () => {
                 <p className={Style.PhotoUser}></p>
                 <div>
                   <p className={Style.NameUser}>Olena Doe </p>
-                  <StarsReviews/>
+                  <StarsReviews stars={4} />
                 </div>
               </div>
               <div>
@@ -72,7 +76,7 @@ export const Reviews = () => {
                 <p className={Style.PhotoUser}></p>
                 <div>
                   <p className={Style.NameUser}>Olena Doe </p>
-                  <StarsReviews/>
+                  <StarsReviews stars={4} />
                 </div>
               </div>
               <div>

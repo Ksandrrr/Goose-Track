@@ -16,6 +16,7 @@
   border: 1px solid rgb(219, 219, 219);
   border-radius: 15px;
   max-width: 580px;
+  // background-color: white;
 }
 .wrapperUser {
   display: flex;
@@ -23,11 +24,11 @@
   gap: 20px;
 }
 .Subscript {
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 14px;
 }
 .NameUser {
-  margin-bottom: 13px;
+  margin-bottom: 5px;
   font-size: 18px;
   font-weight: 700;
 }
@@ -57,6 +58,7 @@
 display: flex;
 justify-content: center;
 gap: 10px;
+
 }
 
 
