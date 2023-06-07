@@ -1,45 +1,26 @@
 import styles from './LoginPage.module.scss';
-import { LuLogOut } from 'react-icons/lu';
+import LoginForm from 'components/LoginForm/LoginForm';
 import Logo from '../../img/SignIn/elements1.png'
 import { NavLink } from 'react-router-dom';
 
+import { useDispatch } from 'react-redux';
+import { register } from 'redux/auth/auth-operations';
 
 export const Login = () => {
+
+  const dispatch = useDispatch();
+
+  const onRegister = (data) => {
+    dispatch(register(data))
+  }
+
+
   return (
     <div className={styles.container}>
-        {/* <img className={styles.img} src={Logo} alt="logoGoos" /> */}
       <div className={styles.form}>
         <h2 className={styles.text}>Log in</h2>
-        <form className={styles.formInput}>
-          <label className={styles.label} htmlFor="email">
-            Email
-          </label>
-          <input
-            className={styles.input}
-            type="email"
-            id="email"
-            name="email"
-            required
-            placeholder="Enter email"
-          />
-          <label className={styles.label} htmlFor="password">
-            Password
-          </label>
-          <input
-            className={styles.input}
-            type="password"
-            id="password"
-            name="password"
-            required
-            placeholder="Enter password"
-          />
-        </form>
-        <NavLink to="/calendar"><button type="submit" className={styles.btn}>
-          <p className={styles.textBtn}>Log in</p>
-          <LuLogOut className={styles.icon} />
-        </button></NavLink>
+      <LoginForm onSubmit={onRegister}/>
       </div>
-
       <img src={Logo} alt="Logo" className={styles.right} />
        <NavLink to="/registr"><div className={styles.logInButton}>
         <a className={styles.link} href="/login">

@@ -1,0 +1,32 @@
+@import '/src/styles/styles.scss';
+
+.wrapper {
+  background-color: #fff;
+  width: 335px;
+  height: 653px;
+  border-radius: 16px;
+  padding: 59px 18px 40px 18px;
+  text-align: center;
+//   margin-top: 102px;
+}
+
+.name {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+
+  color: #343434;
+}
+
+.user {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: #343434;
+  margin-top: 4px;
+}

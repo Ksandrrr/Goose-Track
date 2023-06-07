@@ -1,6 +1,9 @@
-
+import styles from './AccountPage.module.scss'
 
 export const AccountPage = () => {
 
-    return <h1>Account PAGEEEEEEEEEEEEEEEEE</h1>
+    return <div className={styles.wrapper}>
+        <p className={styles.name}>Nadiia Doe</p>
+        <p className={styles.user}>User</p>
+    </div>
 }
