@@ -9,7 +9,7 @@ import {RegisterPage} from "../../pages/RegisterPage/RegistrPage"
 export const UserRoutes = () => {
 
     return <BrowserRouter basename="/Goose-Track">
-        <SideBar /> 
+        {/* <SideBar />  */}
       <Routes>
         <Route path="/" element={<MainPage />}></Route>
         <Route path="/login" element={<Login />}></Route>

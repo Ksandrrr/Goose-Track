@@ -1,7 +1,8 @@
 import styles from './LoginPage.module.scss';
 import { LuLogOut } from 'react-icons/lu';
-// import Logo from '../../img/SignIn/Group.png';
+import Logo from '../../img/SignIn/elements1.png'
 import { NavLink } from 'react-router-dom';
+
 
 export const Login = () => {
   return (
@@ -38,6 +39,8 @@ export const Login = () => {
           <LuLogOut className={styles.icon} />
         </button></NavLink>
       </div>
+
+      <img src={Logo} alt="Logo" className={styles.right} />
        <NavLink to="/registr"><div className={styles.logInButton}>
         <a className={styles.link} href="/login">
           Sign Up

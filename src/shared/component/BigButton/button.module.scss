@@ -1,0 +1,28 @@
+@import '/src/styles/styles.scss';
+
+.btn {
+  width: 287px;
+  height: 46px;
+  background: #3e85f3;
+  box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    width: 400px;
+    height: 56px;
+    padding: 16px;
+    margin-top: 48px;
+  }
+}
+
+.icon {
+  margin-left: 11px;
+}

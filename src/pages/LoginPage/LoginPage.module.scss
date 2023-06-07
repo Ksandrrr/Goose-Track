@@ -8,6 +8,14 @@
   align-items: center;
   height: 100vh;
   position: relative;
+
+
+  // @media screen and (min-width: 1280px) {
+  //   background-image: url('../../img/SignIn/elements1.png');
+  //   background-size: 368px 512px;
+  //   background-repeat: no-repeat;
+  //   background-position: -100px 160px;
+  // }
 }
 
 .form {
@@ -132,4 +140,18 @@
   top: 230px;
   right: 60px;
   bottom: 19px;
+}
+
+
+.right {
+  position: absolute;
+  top: 200px;
+  right: 70px; 
+  width: 368px;
+  height: auto;
+  display: none;
+
+  @media (min-width: 1280px) {
+    display: block; 
+  }
 }

@@ -1,12 +1,21 @@
 @import '/src/styles/styles.scss';
 
 .container {
-  background-color: #dcebf7;
   display: flex;
+  background-color: #dcebf7;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+
+
+
+  // @media screen and (min-width:1280px) {
+  //   background-image: url('../../img/SignIn/elements.png');
+  //   background-size: 400px 416px;
+  //   background-repeat: no-repeat;
+  //   background-position: 32px 354px;
+  // }
 }
 
 .form {
@@ -16,6 +25,13 @@
   border-radius: 8px;
   padding: 40px 24px;
   margin-bottom: 18px;
+
+  @media screen and (min-width: 768px) {
+    width: 480px;
+    height: 521px;
+    padding: 40px 40px;
+    margin-bottom: 24px;
+  }
 }
 
 .text {
@@ -30,68 +46,22 @@
   margin-bottom: 32px;
 }
 
-.label {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 15px;
-}
 
-.input {
-  padding: 14px;
-  width: 287px;
-  height: 46px;
-  margin-bottom: 24px;
+// .img {
+//   position: relative;
+//   display: flex;
+//   justify-content: flex-end;
+// }
 
-  background: #ffffff;
-  border: 1px solid rgba(220, 227, 229, 0.6);
-  border-radius: 8px;
+.left {
+  position: absolute;
+  top: 305px;
+  left: 100px;
+  width: 400px;
+  height: auto;
+  display: none;
 
-  margin-top: 8px;
-
-  &::placeholder {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    /* identical to box height, or 129% */
-
-    color: #dce3e5;
+  @media (min-width: 1280px) {
+    display: block; 
   }
-}
-
-.input:last-child {
-  margin-bottom: 0;
-}
-
-.btn {
-  width: 287px;
-  height: 46px;
-  background: #3e85f3;
-  box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
-  border-radius: 16px;
-  padding: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 32px;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-}
-
-.logInButton {
-  justify-content: center;
-  align-items: center;
-}
-
-.link {
-  color: #3e85f3;
-  text-decoration-line: underline;
-}
-
-.icon {
-  margin-left: 11px;
 }
