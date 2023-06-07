@@ -1,0 +1,56 @@
+@import '/src/styles/styles.scss';
+
+.label {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.input {
+  padding: 14px;
+  width: 287px;
+  height: 46px;
+  
+
+  background: #ffffff;
+  border: 1px solid rgba(220, 227, 229, 0.6);
+  border-radius: 8px;
+
+  margin-top: 8px;
+
+  &::placeholder {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: #dce3e5;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 400px;
+    height: 54px;
+    padding: 18px;
+  
+  }
+}
+
+.div:last-child {
+  margin-bottom: 0;
+}
+
+.div {
+    margin-bottom: 24px;
+
+    @media screen and (min-width:768px) {
+        margin-bottom: 18px;
+    }
+}
