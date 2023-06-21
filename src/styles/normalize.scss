@@ -40,6 +40,7 @@ body {
     // background-color: #F7F6F9;
 }
 
+
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
 ul,
 ol {
@@ -79,3 +80,13 @@ input::-webkit-inner-spin-button {
 }
 
 
+.swiper-scrollbar {
+    height: 12px !important;
+    position: fixed !important;
+    bottom: 20px !important;
+
+    @media screen and (min-width: 1200px) {
+        left: 300px !important;
+        max-width: 900px!important;
+    }
+}

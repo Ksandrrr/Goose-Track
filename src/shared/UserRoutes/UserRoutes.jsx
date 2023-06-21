@@ -5,7 +5,8 @@ import { MainLayout } from "../../pages/MainLayout/MainLayout"
 import {AccountPage} from "../../pages/AccountPage/AccountPage"
 import { MainPage } from "../../pages/MainPage/MainPage"
 import { Login } from "../../pages/LoginPage/LoginPage"
-import {RegisterPage} from "../../pages/RegisterPage/RegistrPage"
+import { RegisterPage } from "../../pages/RegisterPage/RegistrPage"
+import {ColumnHeadBar} from "../../components/ColumnHeadBar/ColumnHeadBar"
 export const UserRoutes = () => {
 
     return <BrowserRouter basename="/Goose-Track">
@@ -15,7 +16,8 @@ export const UserRoutes = () => {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/registr" element={<RegisterPage />}></Route>
         <Route path="/calendar" element={<MainLayout />}></Route>
-          <Route path="/account" element={<AccountPage />}></Route>
+        <Route path="/account" element={<AccountPage />}></Route>
+        <Route path="/calendar/task" element={<MainLayout />}></Route>
         </Routes>
         {/* <Suspense fallback={<div>Loading...</div>}>
            <Routes>

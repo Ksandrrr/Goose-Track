@@ -1,0 +1,84 @@
+@import '/src/styles/styles.scss';
+.ColumnHeadBar {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: #f7f6f9;
+    padding-bottom: 32px;
+    min-height: 100vh;
+    min-width: 100%;
+    @media screen and (min-width: 1200px) {
+            // padding-left: 289px;
+     }
+}
+.ColumnHeadBarDark {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: getColor('dark-light-theme');
+    padding-bottom: 32px;
+    min-height: 100vh;
+    min-width: 100%;
+
+    @media screen and (min-width: 1200px) {
+        // padding-left: 289px;
+    }
+}
+.wrapperTask {
+padding: 20px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+   
+}
+.wrapperTaskDark {
+    padding: 20px;
+width: 100%;
+background-color: #21222c;
+border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+}
+.wrappertitle {
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+.taskTitle {
+
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+}
+.taskTitleDark {
+    
+color: white;
+font-size: 18px;
+font-weight: 700;
+}
+.taskBtn {
+cursor: pointer;
+display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 52px;
+    border-radius: 8px;
+background-color: getColor('light-blue');
+    border: 1px dashed #3E85F3;
+
+}
+.taskBtnDark {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+width: 100%;
+height: 52px;
+border-radius: 8px;
+background-color: getColor('full-blue');
+border: none;
+color: white;
+}
