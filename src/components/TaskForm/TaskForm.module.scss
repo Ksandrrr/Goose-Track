@@ -1,0 +1,265 @@
+.wrapperTaskModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(189, 189, 189, 0.281);
+  z-index: 99;
+}
+.TaskModalDark {
+  position: fixed;
+  width: 303px;
+
+  padding: 48px 18px;
+  background-color: rgb(23, 24, 32);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  box-shadow: 0px 4px 16px rgba(17, 17, 17, 0.1);
+  border-radius: 8px;
+  @media screen and (min-width: 768px) {
+    width: 396px;
+    height: 360px;
+    padding: 40px 28px;
+  }
+}
+.TaskModal {
+  position: fixed;
+  width: 303px;
+
+  padding: 48px 18px;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  border: 1px solid rgba(220, 227, 229, 0.8);
+  box-shadow: 0px 4px 16px rgba(17, 17, 17, 0.1);
+  border-radius: 8px;
+  @media screen and (min-width: 768px) {
+    width: 396px;
+    height: 360px;
+    padding: 40px 28px;
+  }
+}
+.CloseModalDark {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: white;
+  border: none;
+  float: right;
+}
+.CloseModal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  border: none;
+  float: right;
+}
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.TitleInput {
+  height: 42px;
+  border-radius: 8px;
+  background-color: #f7f7f7;
+  border: none;
+  padding-left: 14px;
+  color: white;
+  outline: none;
+
+  &::placeholder {
+    color: #343434;
+    font-weight: 600;
+    font-size: 14px;
+  }
+}
+.TitleInputDark {
+  height: 42px;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: 14px;
+  color: white;
+  outline: none;
+  &::placeholder {
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+  }
+}
+.PositionTimeInput {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+.wrapperTime {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.TimeInput {
+  border-radius: 8px;
+  background-color: #f7f7f7;
+  border: none;
+  width: 126px;
+  height: 42px;
+  box-sizing: border-box;
+  color: #343434;
+  padding: 0 8px;
+}
+.TimeInputDark {
+  border-radius: 8px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  width: 126px;
+  height: 42px;
+  box-sizing: border-box;
+  color: white;
+  padding: 0 8px;
+}
+.FormText {
+  font-weight: 500;
+  font-size: 12px;
+  color: rgba(52, 52, 52, 0.8);
+}
+.FormTextDark {
+  font-weight: 500;
+  font-size: 12px;
+  color: rgba(250, 250, 250, 0.3);
+}
+.WrapperCheckbox {
+  display: flex;
+  gap: 15px;
+}
+.CheckboxText {
+  color: #343434;
+  font-size: 14px;
+  font-weight: 600;
+}
+.CheckboxTextDark {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+.CheckboxLabel {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  & input {
+    position: absolute;
+    appearance: none;
+  }
+}
+.checkboxCustomLow {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #72c2f8;
+}
+.CheckboxLow:checked + .checkboxCustomLow::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 12px;
+  height: 12px;
+
+  box-shadow: 0 0 0 2px rgba(114, 194, 248, 0.5);
+  border-radius: 50%;
+}
+.checkboxCustomMedium {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #f3b249;
+}
+.CheckboxMedium:checked + .checkboxCustomMedium::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 12px;
+  height: 12px;
+
+  box-shadow: 0 0 0 2px #f5be66;
+  border-radius: 50%;
+}
+.checkboxCustomHigh {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ea3d65;
+}
+.CheckboxHigh:checked + .checkboxCustomHigh::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 12px;
+  height: 12px;
+
+  box-shadow: 0 0 0 2px #ee5377;
+  border-radius: 50%;
+}
+.wrapperBtn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+.btnAdd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  width: 135px;
+  height: 42px;
+  font-weight: 600;
+  font-size: 14px;
+  background-color: #3e85f3;
+  border-radius: 8px;
+  border: none;
+  color: white;
+}
+.btnCencel {
+  cursor: pointer;
+  width: 118px;
+  height: 42px;
+  font-weight: 600;
+  font-size: 14px;
+  background-color: #efefef;
+  border-radius: 8px;
+  border: none;
+  color: rgb(0, 0, 0);
+}
+.btnCencelDark {
+  cursor: pointer;
+  width: 118px;
+  height: 42px;
+  font-weight: 600;
+  font-size: 14px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: none;
+  color: rgb(0, 0, 0);
+}

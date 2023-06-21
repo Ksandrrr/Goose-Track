@@ -1,40 +1,105 @@
-
 .DayToolbarWrapper {
-display: flex;
-align-items: center;
-justify-content: space-around;
-outline: 1px solid rgba(220, 227, 229, 0.8);
-height: 50px;
-background-color: white;
-border-radius: 8px;
-margin-bottom: 14px;
-
-}
-.DayToolbarWrapperDark {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    outline: 1px solid rgba(255, 255, 255, 0.15);
-    height: 50px;
-    background-color: #21222C;
-    border-radius: 8px;
-    margin-bottom: 14px;
-    & .Day {
-    color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  outline: 1px solid rgba(220, 227, 229, 0.8);
+  padding: 12px 0;
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  
+  & .Day {
+    font-size: 14px;
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
     }
-}
-.Day {
-color: rgb(0, 0, 0);
-}
-.WrapperDetail {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  }
+  
 }
 .DayDetail {
-    color: rgba(250, 250, 250, 0.3);
+    color: black;
+    font-size: 16px;
+}
+.DayLargeScr {
+color: black;
+    font-size: 16px;
+}
+.DayToolbarWrapperDark {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  outline: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 12px 0;
+  background-color: #21222c;
+  border-radius: 8px;
+  margin-bottom: 14px;
+
+  & .DayDark {
+    color: white;
+    font-size: 14px;
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+    }
+  }
+  
+}
+
+.WrapperDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.DayLargeScrDark {
+    color: white;
+    font-size: 14px;
+      font-size: 16px;
+
+}
+.DayDetailDark {
+    color: rgba(255, 255, 255, 0.3);
+        font-size: 14px;
+        font-size: 16px;
 }
 .Number {
-color: white;
+  color: black;
+  font-size: 12px;
+padding: 2px 5px;
+margin-top: 6px;
+@media screen and (min-width: 768px) {
+        font-size: 16px;
+    }
+}
+.NumberDark {
+  color: white;
+  font-size: 12px;
+  margin-top: 6px;
+    padding: 2px 5px;
+    @media screen and (min-width: 768px) {
+            font-size: 16px;
+        }
+}
+.NumberCurrent {
+  color: white;
+  padding: 2px 5px;
+  border-radius: 5px;
+  background-color: #3e85f3;
+  font-size: 12px;
+margin-top: 6px;
+@media screen and (min-width: 768px) {
+        font-size: 16px;
+        padding: 2px 7px;
+    }
+}
+.NumberCurrentDark {
+  color: white;
+padding: 2px 5px;
+  border-radius: 5px;
+  background-color: #3e85f3;
+  font-size: 12px;
+margin-top: 6px;
+@media screen and (min-width: 768px) {
+        font-size: 16px;
+        padding: 2px 7px;
+    }
 }

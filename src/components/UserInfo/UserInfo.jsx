@@ -1,5 +1,5 @@
 import Style from './UserInfo.module.scss';
-import { useState } from 'react';
+import { useState,useEffect  } from 'react';
 import { toggleTheme } from "../../redux/theme-toggle/theme.slice";
 import { useDispatch,useSelector } from 'react-redux';
 
@@ -11,6 +11,8 @@ export const UserInfo = () => {
   const [changeIcon, setChangeIcon] = useState(true);
    const theme = useSelector((state) => state.theme.value);
   const dispatch = useDispatch();
+
+
 
   const handleToggle = () => {
     setChangeIcon(prevState => !prevState)

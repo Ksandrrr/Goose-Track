@@ -13,24 +13,24 @@ export const DayToolbar = ({ element }) => {
     >
       {isMediumScreen && (
         <>
-          <p className={Style.Day}>M</p>
-          <p className={Style.Day}>T</p>
-          <p className={Style.Day}>W</p>
-          <p className={Style.Day}>T</p>
-          <p className={Style.Day}>F</p>
-          <p className={Style.Day}>S</p>
-          <p className={Style.Day}>S</p>
+          <p className={theme ? Style.Day : Style.DayDark}>M</p>
+          <p className={theme ? Style.Day : Style.DayDark}>T</p>
+          <p className={theme ? Style.Day : Style.DayDark}>W</p>
+          <p className={theme ? Style.Day : Style.DayDark}>T</p>
+          <p className={theme ? Style.Day : Style.DayDark}>F</p>
+          <p className={theme ? Style.Day : Style.DayDark}>S</p>
+          <p className={theme ? Style.Day : Style.DayDark}>S</p>
         </>
       )}
       {isLargeScreen && (
         <>
-          <p className={Style.Day}>MON</p>
-          <p className={Style.Day}>TUE</p>
-          <p className={Style.Day}>WED</p>
-          <p className={Style.Day}>THU</p>
-          <p className={Style.Day}>FRI</p>
-          <p className={Style.Day}>SAT</p>
-          <p className={Style.Day}>SUN</p>
+          <p className={theme ? Style.DayLargeScr : Style.DayLargeScrDark}>MON</p>
+          <p className={theme ? Style.DayLargeScr : Style.DayLargeScrDark}>TUE</p>
+          <p className={theme ? Style.DayLargeScr : Style.DayLargeScrDark}>WED</p>
+          <p className={theme ? Style.DayLargeScr : Style.DayLargeScrDark}>THU</p>
+          <p className={theme ? Style.DayLargeScr : Style.DayLargeScrDark}>FRI</p>
+          <p className={theme ? Style.DayLargeScr : Style.DayLargeScrDark}>SAT</p>
+          <p className={theme ? Style.DayLargeScr : Style.DayLargeScrDark}>SUN</p>
         </>
       )}
     </div>
