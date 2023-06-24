@@ -1,0 +1,64 @@
+.allTask {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+.TaskWrapper {
+  width: 100%;
+  background: #f7f6f9;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  padding: 14px 15px;
+  word-wrap: break-word;
+  margin-bottom: 15px;
+}
+.TaskWrapperDark {
+  width: 100%;
+  background: #171820;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 14px 15px;
+  word-wrap: break-word;
+margin-bottom: 15px;
+}
+.TitlTask {
+  width: 100%;
+  white-space: normal;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.wrapperTime {
+display: flex;
+justify-content: space-between;
+gap: 10px;
+margin-bottom: 10px;
+}
+.TextTime {
+font-size: 12px;
+font-weight: 200;
+}
+.wrapperTaskDesc {
+display: flex;
+align-items: end;
+gap: 10px;
+}
+.IMGUserTask {
+width: 30px;
+height: 30px;
+border-radius: 50%;
+background-color: rgb(56, 71, 66);
+}
+.TaskPriority {
+    font-size: 10px;
+    font-weight: 600;
+    
+}
+.wrapperIcon {
+display: flex;
+align-items: center;
+gap: 7px;
+margin-left: auto;
+}
+

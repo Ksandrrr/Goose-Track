@@ -4,62 +4,63 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 24px;
+  @media screen and (min-width: 768px) {
+      gap: 20px;
+    }
 }
 
 .calendarColumns {
   display: grid;
-  grid-template-columns: repeat(6, 47px);
+  grid-template-columns: repeat(6, calc((100%) / 6)); 
   grid-template-rows: repeat(6, 93px);
   outline: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
   overflow: hidden;
-  width: calc(47px * 6);
+  width: calc(100% - 2px); 
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; 
+height: 555px;
   @media screen and (min-width: 375px) {
-    grid-template-columns: repeat(7, 47px);
+    grid-template-columns: repeat(7, calc((100%) / 7));
     grid-template-rows: repeat(5, 93px);
-    width: calc(47px * 7);
+    height: 463px;
   }
+
   @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(7, 94px);
+    grid-template-columns: repeat(7, calc((100%) / 7)); 
     grid-template-rows: repeat(5, 146px);
-    width: calc(94px * 7);
+    height: 728px;
   }
+
   @media screen and (min-width: 1200px) {
-    grid-template-columns: repeat(7, 145px);
+    grid-template-columns: repeat(7, calc((100%) / 7)); 
     grid-template-rows: repeat(5, 106px);
-    width: calc(145px * 7);
+    height: 528px;
   }
 }
 
 .calendarColumn {
   background-color: white;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
 
   padding-top: 8px;
-  padding-right: 8px;
+
   outline: 1px solid rgba(220, 227, 229, 0.5);
   @media screen and (min-width: 1200px) {
     padding-top: 15px;
-    padding-right: 15px;
   }
 }
 .calendarColumnDark {
   background-color: #21222c;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
 
   padding-top: 8px;
-  padding-right: 8px;
+
   outline: 1px solid rgba(255, 255, 255, 0.15);
 
   @media screen and (min-width: 1200px) {
     padding-top: 15px;
-    padding-right: 15px;
   }
 }
 .empty {
@@ -70,11 +71,10 @@
   outline: 1px solid rgba(255, 255, 255, 0.15);
 }
 .today {
-  padding-top: 6px;
-  padding-right: 6px;
+  padding-top: 8px;
+
   @media screen and (min-width: 1200px) {
-    padding-top: 9px;
-    padding-right: 8px;
+    padding-top: 15px;
   }
 }
 .today p {
@@ -82,30 +82,52 @@
   border-radius: 8px;
   background-color: getColor('full-blue');
   color: white;
+  display: inline;
+  float: right;
+  margin-top: -2px;
+  margin-right: 5px;
   @media screen and (min-width: 1200px) {
     padding: 5px 10px;
+    margin-top: -6px;
+    margin-right: 10px;
   }
+}
+.calendarColumnText {
+
+  display: inline;
+  float: right;
+  margin-right: 10px;
 }
 .calendarColumnTextDark {
   color: white;
+  display: inline;
+  float: right;
+  margin-right: 10px;
 }
 .BtnWrapper {
   display: flex;
   background-color: #ffffff;
   border-radius: 8px;
   border: 1px solid rgba(220, 227, 229, 0.5);
+  @media screen and (min-width: 768px) {
+      margin-right: auto;
+    }
+  
 }
 .BtnWrapperDark {
   display: flex;
   background-color: #21222c;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.15);
+  @media screen and (min-width: 768px) {
+      margin-right: auto;
+    }
 }
 .PrevbtnDark {
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding: 8px;
+  padding: 7px;
   background-color: transparent;
   border: none;
   color: white;
@@ -115,7 +137,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding: 8px;
+  padding: 7px;
   background-color: transparent;
   border: none;
   color: white;
@@ -125,7 +147,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding: 8px;
+  padding: 7px;
   background-color: transparent;
   border: none;
   color: black;
@@ -141,8 +163,8 @@
   border-left: 1px solid rgba(220, 227, 229, 0.5);
 }
 .btnChangeWrapper {
-    border-radius: 8px;
-    overflow: hidden;
+  border-radius: 8px;
+  overflow: hidden;
 }
 .btnChangeMonth {
   cursor: pointer;
@@ -151,16 +173,19 @@
   padding-bottom: 8px;
   background-color: white;
   border: none;
-
+    font-size: 14px;
+      font-weight: 500;
 }
 .btnChangeMonthDark {
   cursor: pointer;
-width: 82px;
+  width: 82px;
   padding-top: 8px;
   padding-bottom: 8px;
-  background-color: #21222C;
+  background-color: #21222c;
   border: none;
   color: getColor('full-blue');
+  font-size: 14px;
+    font-weight: 500;
 }
 .btnChangeDay {
   cursor: pointer;
@@ -170,15 +195,39 @@ width: 82px;
   background-color: white;
   border: none;
   border-left: 1px solid rgba(220, 227, 229, 0.5);
- 
+    font-size: 14px;
+    
+      font-weight: 500;
 }
 .btnChangeDayDark {
   cursor: pointer;
-width: 82px;
+  width: 82px;
   padding-top: 8px;
   padding-bottom: 8px;
-  background-color: #21222C;
+  background-color: #21222c;
   border: none;
-
+  font-size: 14px;
+  
+    font-weight: 500;
   color: getColor('full-blue');
+}
+
+
+.TaskNumber {
+  color: rgb(63, 63, 253);
+  font-size: 9px;
+  text-decoration: underline;
+  margin-top: 15px;
+  float: right;
+  margin-right: 2px;
+@media screen and (min-width: 768px) {
+  margin-top: 25px;
+    font-size: 12px;
+    margin-right: 5px;
+  }
+    @media screen and (min-width: 1200px) {
+    margin-top: 15px;
+      font-size: 12px;
+      margin-right: 5px;
+    }
 }

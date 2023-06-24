@@ -21,7 +21,6 @@
   border-radius: 8px;
   @media screen and (min-width: 768px) {
     width: 396px;
-    height: 360px;
     padding: 40px 28px;
   }
 }
@@ -40,7 +39,7 @@
   border-radius: 8px;
   @media screen and (min-width: 768px) {
     width: 396px;
-    height: 360px;
+
     padding: 40px 28px;
   }
 }
@@ -81,13 +80,35 @@
   background-color: #f7f7f7;
   border: none;
   padding-left: 14px;
-  color: white;
+  color: rgb(0, 0, 0);
   outline: none;
 
   &::placeholder {
     color: #343434;
     font-weight: 600;
     font-size: 14px;
+  }
+  @media screen and (min-width: 768px) {
+    height: 46px;
+  }
+}
+.TitleInputError {
+height: 42px;
+  border-radius: 8px;
+  background-color: #f7f7f7;
+  border: none;
+  padding-left: 14px;
+  color: white;
+  outline: none;
+  border: 1px solid rgb(245, 45, 45);
+  &::placeholder {
+    color: #343434;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 46px;
   }
 }
 .TitleInputDark {
@@ -98,11 +119,39 @@
   padding-left: 14px;
   color: white;
   outline: none;
+
   &::placeholder {
     color: white;
     font-weight: 600;
     font-size: 14px;
   }
+  @media screen and (min-width: 768px) {
+    height: 46px;
+  }
+}
+.TitleInputDarkError {
+height: 42px;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: 14px;
+  color: white;
+  outline: none;
+  border: 1px solid rgba(245, 45, 45, 0.74);
+  &::placeholder {
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 46px;
+  }
+}
+.Notification {
+font-size: 14px;
+color: rgb(255, 28, 28);
+margin-bottom: -10px;
 }
 .PositionTimeInput {
   display: flex;
@@ -123,6 +172,27 @@
   box-sizing: border-box;
   color: #343434;
   padding: 0 8px;
+   
+  @media screen and (min-width: 768px) {
+    width: 163px;
+    height: 46px;
+  }
+}
+.TimeInputError {
+border-radius: 8px;
+  background-color: #f7f7f7;
+  border: none;
+  width: 126px;
+  height: 42px;
+  box-sizing: border-box;
+  color: #343434;
+  padding: 0 8px;
+  border: 1px solid rgba(245, 45, 45, 0.74);
+
+  @media screen and (min-width: 768px) {
+    width: 163px;
+    height: 46px;
+  }
 }
 .TimeInputDark {
   border-radius: 8px;
@@ -133,16 +203,46 @@
   box-sizing: border-box;
   color: white;
   padding: 0 8px;
+
+  @media screen and (min-width: 768px) {
+    width: 163px;
+    height: 46px;
+  }
+}
+.TimeInputDark[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+.TimeInputDarkError {
+border-radius: 8px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  width: 126px;
+  height: 42px;
+  box-sizing: border-box;
+  color: white;
+  padding: 0 8px;
+  border: 1px solid rgba(245, 45, 45, 0.74);
+  @media screen and (min-width: 768px) {
+    width: 163px;
+    height: 46px;
+  }
 }
 .FormText {
   font-weight: 500;
   font-size: 12px;
   color: rgba(52, 52, 52, 0.8);
+    @media screen and (min-width: 768px) {
+        font-size: 14px;
+      }
 }
+
 .FormTextDark {
   font-weight: 500;
   font-size: 12px;
   color: rgba(250, 250, 250, 0.3);
+  @media screen and (min-width: 768px) {
+      font-size: 14px;
+    }
 }
 .WrapperCheckbox {
   display: flex;
@@ -158,7 +258,9 @@
   font-size: 14px;
   font-weight: 600;
 }
+
 .CheckboxLabel {
+  cursor: pointer;
   display: flex;
   gap: 6px;
   align-items: center;
@@ -220,6 +322,7 @@
 
   box-shadow: 0 0 0 2px #ee5377;
   border-radius: 50%;
+  
 }
 .wrapperBtn {
   display: flex;
@@ -240,6 +343,10 @@
   border-radius: 8px;
   border: none;
   color: white;
+  @media screen and (min-width: 768px) {
+    width: 182px;
+    height: 48px;
+  }
 }
 .btnCencel {
   cursor: pointer;
@@ -251,6 +358,10 @@
   border-radius: 8px;
   border: none;
   color: rgb(0, 0, 0);
+  @media screen and (min-width: 768px) {
+    width: 144px;
+    height: 48px;
+  }
 }
 .btnCencelDark {
   cursor: pointer;
@@ -262,4 +373,8 @@
   border-radius: 8px;
   border: none;
   color: rgb(0, 0, 0);
+  @media screen and (min-width: 768px) {
+    width: 144px;
+    height: 48px;
+  }
 }
