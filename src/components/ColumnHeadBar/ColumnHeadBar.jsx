@@ -10,23 +10,30 @@ import { IconContext } from 'react-icons';
 import { HiOutlinePlusCircle } from 'react-icons/hi';
 
 import { useMediaQuery } from 'react-responsive';
-
+import {TaskList} from "../TaskList/TaskList"
 import { Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 
 
-export const ColumnHeadBar = () => {
+export const ColumnHeadBar = (day) => {
 
   const [taskModal, setTaskModal] = useState(false)
+  const [progress, setProgress] = useState();
 
   const theme = useSelector(state => state.theme.value);
 
     const isMediumScreen = useMediaQuery({ minWidth: 320, maxWidth: 767 });
     const phoneTablet = useMediaQuery({ maxWidth: 1299 });
     const isLargeScreen = useMediaQuery({minWidth: 1300})
+    
+  const handleOpenModal = (e) => {
+    setProgress(e.target.name)
 
+  setTaskModal(true)
+  
+  }
 
   return (
     <section className={theme ? Style.ColumnHeadBar : Style.ColumnHeadBarDark}>
@@ -49,7 +56,8 @@ export const ColumnHeadBar = () => {
                 <HiOutlinePlusCircle />
               </IconContext.Provider>
             </div>
-            <button onClick={() => setTaskModal(true)} className={theme ? Style.taskBtn : Style.taskBtnDark}>
+            <TaskList day={day} currentProgress="to-do" />
+            <button onClick={handleOpenModal} className={theme ? Style.taskBtn : Style.taskBtnDark} name='to-do'>
               <IconContext.Provider value={{ size: '20px' }}>
                 <AiOutlinePlus />
               </IconContext.Provider>
@@ -69,7 +77,8 @@ export const ColumnHeadBar = () => {
                 <HiOutlinePlusCircle />
               </IconContext.Provider>
             </div>
-            <button onClick={() => setTaskModal(true)} className={theme ? Style.taskBtn : Style.taskBtnDark}>
+            <TaskList day={day} currentProgress="in-progress" />
+            <button onClick={handleOpenModal} className={theme ? Style.taskBtn : Style.taskBtnDark} name='in-progress'>
               <IconContext.Provider value={{ size: '20px' }}>
                 <AiOutlinePlus />
               </IconContext.Provider>
@@ -89,7 +98,8 @@ export const ColumnHeadBar = () => {
                 <HiOutlinePlusCircle />
               </IconContext.Provider>
             </div>
-            <button onClick={() => setTaskModal(true)} className={theme ? Style.taskBtn : Style.taskBtnDark}>
+            <TaskList day={day} currentProgress="done" />
+            <button onClick={handleOpenModal} className={theme ? Style.taskBtn : Style.taskBtnDark} name='done'>
               {' '}
               <IconContext.Provider value={{ size: '20px' }}>
                 <AiOutlinePlus />
@@ -111,7 +121,8 @@ export const ColumnHeadBar = () => {
                 <HiOutlinePlusCircle />
               </IconContext.Provider>
             </div>
-            <button onClick={() => setTaskModal(true)} className={theme ? Style.taskBtn : Style.taskBtnDark}>
+        <TaskList day={day} currentProgress="to-do" />
+            <button onClick={handleOpenModal} className={theme ? Style.taskBtn : Style.taskBtnDark} name='to-do'>
               <IconContext.Provider value={{ size: '20px' }}>
                 <AiOutlinePlus />
               </IconContext.Provider>
@@ -129,13 +140,15 @@ export const ColumnHeadBar = () => {
                 <HiOutlinePlusCircle />
               </IconContext.Provider>
             </div>
-            <button onClick={() => setTaskModal(true)} className={theme ? Style.taskBtn : Style.taskBtnDark}>
+            <TaskList day={day} currentProgress="in-progress" />
+            <button onClick={handleOpenModal} className={theme ? Style.taskBtn : Style.taskBtnDark}  name='in-progress'>
               <IconContext.Provider value={{ size: '20px' }}>
                 <AiOutlinePlus />
               </IconContext.Provider>
               Add Task
             </button>
-              </div>
+        </div>
+        
               <div className={theme ? Style.wrapperTask : Style.wrapperTaskDark}>
             <div className={Style.wrappertitle}>
               <p className={theme ? Style.taskTitle : Style.taskTitleDark}>
@@ -147,7 +160,8 @@ export const ColumnHeadBar = () => {
                 <HiOutlinePlusCircle />
               </IconContext.Provider>
             </div>
-            <button onClick={() => setTaskModal(true)} className={theme ? Style.taskBtn : Style.taskBtnDark}>
+             <TaskList day={day} currentProgress="done" />
+            <button onClick={handleOpenModal} className={theme ? Style.taskBtn : Style.taskBtnDark} name='done'>
               {' '}
                <IconContext.Provider value={{ size: '20px' }}>
                 <AiOutlinePlus />
@@ -157,7 +171,7 @@ export const ColumnHeadBar = () => {
           </div>
               </>
       }
-      {taskModal && <TaskForm setTaskModal={setTaskModal} />}
+      {taskModal && <TaskForm setTaskModal={setTaskModal} progress={progress} day={day} />}
     </section>
   );
 };

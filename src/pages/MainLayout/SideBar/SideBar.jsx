@@ -31,7 +31,7 @@ export const SideBar = () => {
           <>
             <div className={Style.Header}>
               <IconContext.Provider
-                value={{ size: '24px', className: 'burgerIcon' }}
+                value={{ size: '24px', color: theme ? 'black' : 'white' }}
               >
                 <button
                   className={Style.btnOpen}
@@ -44,7 +44,7 @@ export const SideBar = () => {
             </div>
 
            <div className={openBurger} style={theme === false ? { backgroundColor: "#13151A" } : {}}>
-              <IconContext.Provider value={{ size: '24px' }}>
+              <IconContext.Provider value={{ size: '24px' , color: theme ? 'black' : 'white' }}>
                 <button
                   className={Style.btnClose}
                   onClick={() => setOpenBurger('BurgerMenuClose')}
