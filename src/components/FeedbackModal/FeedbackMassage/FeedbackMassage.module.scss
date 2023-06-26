@@ -1,0 +1,61 @@
+.WrapperMassage {
+max-height: 211px;
+margin-top: 24px;
+background-color: rgba(227, 243, 255, 0.50);
+padding-right: 5px;
+padding-top: 14px;
+padding-left: 14px;
+border-radius: 8px;
+padding-bottom: 14px;
+}
+.WrapperMassageDark {
+max-height: 211px;
+    margin-top: 24px;
+    background-color: #21222C;
+    padding-right: 5px;
+    padding-top: 14px;
+    padding-left: 14px;
+    border-radius: 8px;
+    padding-bottom: 14px;
+}
+.feedbackDark {
+overflow: auto;
+max-height: 180px;
+padding-right: 15px;
+
+}
+.feedbackDark::-webkit-scrollbar {
+    width: 6px;
+   
+}
+
+.feedbackDark::-webkit-scrollbar-thumb {
+    background-color: rgba(23, 24, 32, 1);
+    border-radius: 8px;
+
+}
+
+.feedbackDark::-webkit-scrollbar-track {
+    background-color: rgba(45, 48, 55, 1);
+    border-radius: 8px;
+
+}
+.feedback {
+overflow: auto;
+    max-height: 180px;
+    padding-right: 15px;
+}
+.feedback::-webkit-scrollbar {
+    width: 6px;
+}
+
+.feedback::-webkit-scrollbar-thumb {
+    background-color: #b1b1b1;
+    border-radius: 8px;
+
+}
+
+.feedback::-webkit-scrollbar-track {
+    background-color: #ffffff;
+    border-radius: 8px;
+}

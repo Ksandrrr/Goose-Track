@@ -63,10 +63,9 @@ export const TaskForm = ({ setTaskModal, progress, day }) => {
         date: day,
       };
       dispatch(addTask(task));
-
+setTaskModal(false)
     }
   };
- 
   return createPortal(
     <div className={Style.wrapperTaskModal}>
       <div className={theme ? Style.TaskModal : Style.TaskModalDark}>

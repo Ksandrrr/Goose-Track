@@ -28,7 +28,7 @@ export const TaskList = ({ day, currentProgress }) => {
     }
   };
   return (
-    <div className={Style.allTask}>
+    <div className={ theme ? Style.allTask : Style.allTaskDark}>
       {elements.map(({ title, timeStart, timeEnd, priority }) => {
         return (
           <div className={theme ? Style.TaskWrapper : Style.TaskWrapperDark}>

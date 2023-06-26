@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { lazy, Suspense } from "react";
+// import { lazy, Suspense } from "react";
 import { SideBar } from "../../pages/MainLayout/SideBar/SideBar"
 import { MainLayout } from "../../pages/MainLayout/MainLayout"
 import {AccountPage} from "../../pages/AccountPage/AccountPage"
 import { MainPage } from "../../pages/MainPage/MainPage"
 import { Login } from "../../pages/LoginPage/LoginPage"
 import { RegisterPage } from "../../pages/RegisterPage/RegistrPage"
-import {ColumnHeadBar} from "../../components/ColumnHeadBar/ColumnHeadBar"
+// import {ColumnHeadBar} from "../../components/ColumnHeadBar/ColumnHeadBar"
 export const UserRoutes = () => {
 
     return <BrowserRouter basename="/Goose-Track">
