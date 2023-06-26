@@ -1,13 +1,25 @@
 {
   "files": {
-    "main.css": "/Goose-Track/static/css/main.e7e8d427.css",
-    "main.js": "/Goose-Track/static/js/main.cd49045d.js",
+    "main.css": "/Goose-Track/static/css/main.ec067122.css",
+    "main.js": "/Goose-Track/static/js/main.de44d10b.js",
+    "static/media/imageCalendar-TAB.jpg": "/Goose-Track/static/media/imageCalendar-TAB.d9c0e416285c898aca03.jpg",
+    "static/media/imageCalendar-DESK.jpg": "/Goose-Track/static/media/imageCalendar-DESK.6bd137a51a7a01a967bc.jpg",
+    "static/media/imageAll-TAB.jpg": "/Goose-Track/static/media/imageAll-TAB.1af53e88069006bfef40.jpg",
+    "static/media/imageAll-DESK.jpg": "/Goose-Track/static/media/imageAll-DESK.1db5169fed2a9eb810ff.jpg",
+    "static/media/imageSideBar-TAB.jpg": "/Goose-Track/static/media/imageSideBar-TAB.036a4230d24a6592f089.jpg",
+    "static/media/imageSideBar-DESK.jpg": "/Goose-Track/static/media/imageSideBar-DESK.cf8310380a3afb3752dc.jpg",
+    "static/media/imageCalendar-PHON.jpg": "/Goose-Track/static/media/imageCalendar-PHON.71b2795384e808da245c.jpg",
+    "static/media/imageSideBar-PHONE.jpg": "/Goose-Track/static/media/imageSideBar-PHONE.f043246104434e920196.jpg",
+    "static/media/imageAll-PHONE.jpg": "/Goose-Track/static/media/imageAll-PHONE.d27409b855fa9ea93d76.jpg",
+    "static/media/elements.png": "/Goose-Track/static/media/elements.02f1aeb546ef16bdd9f3.png",
+    "static/media/elements1.png": "/Goose-Track/static/media/elements1.e7e929f2404e1cb175d0.png",
+    "static/media/GOOSE2xLogo.png": "/Goose-Track/static/media/GOOSE2xLogo.3c0470b19aa18aaef0d8.png",
     "index.html": "/Goose-Track/index.html",
-    "main.e7e8d427.css.map": "/Goose-Track/static/css/main.e7e8d427.css.map",
-    "main.cd49045d.js.map": "/Goose-Track/static/js/main.cd49045d.js.map"
+    "main.ec067122.css.map": "/Goose-Track/static/css/main.ec067122.css.map",
+    "main.de44d10b.js.map": "/Goose-Track/static/js/main.de44d10b.js.map"
   },
   "entrypoints": [
-    "static/css/main.e7e8d427.css",
-    "static/js/main.cd49045d.js"
+    "static/css/main.ec067122.css",
+    "static/js/main.de44d10b.js"
   ]
 }
