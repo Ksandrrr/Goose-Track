@@ -7,9 +7,7 @@
     padding-bottom: 32px;
     min-height: 100vh;
     min-width: 100%;
-    @media screen and (min-width: 1200px) {
-            // padding-left: 289px;
-     }
+
 }
 .ColumnHeadBarDark {
     display: flex;
@@ -17,32 +15,32 @@
     gap: 20px;
     background-color: getColor('dark-light-theme');
     padding-bottom: 32px;
-    min-height: 100vh;
+    min-height: calc(100vh - 80px);
     min-width: 100%;
-
-    @media screen and (min-width: 1200px) {
-        // padding-left: 289px;
-    }
 }
 .wrapperTask {
-padding: 20px;
+    padding: 18px 6px;
     width: 100%;
     background-color: white;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 8px;
-   
+
 }
 .wrapperTaskDark {
-    padding: 20px;
+
+    padding: 18px 6px;
 width: 100%;
 background-color: #21222c;
 border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 8px;
+
 }
 .wrappertitle {
 display: flex;
 justify-content: space-between;
 margin-bottom: 20px;
+margin-left: 8px;
+margin-right: 8px;
 }
 .taskTitle {
 
@@ -51,7 +49,7 @@ margin-bottom: 20px;
     font-weight: 700;
 }
 .taskTitleDark {
-    
+
 color: white;
 font-size: 18px;
 font-weight: 700;
@@ -62,12 +60,13 @@ display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    width: 100%;
+    width: calc(100% - 16px);
     height: 52px;
     border-radius: 8px;
 background-color: getColor('light-blue');
     border: 1px dashed #3E85F3;
-
+margin-left: 8px;
+    margin-right: 8px;
 }
 .taskBtnDark {
     cursor: pointer;
@@ -75,10 +74,12 @@ background-color: getColor('light-blue');
     align-items: center;
     justify-content: center;
     gap: 10px;
-width: 100%;
+width: calc(100% - 16px);
 height: 52px;
 border-radius: 8px;
 background-color: getColor('full-blue');
 border: none;
 color: white;
+margin-left: 8px;
+margin-right: 8px;
 }

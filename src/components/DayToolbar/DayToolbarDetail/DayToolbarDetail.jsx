@@ -7,7 +7,6 @@ export const DayToolbarDetail = ({ day, month }) => {
   const [selectedDay, setSelectedDay] = useState(null);
 
   const isMediumScreen = useMediaQuery({ minWidth: 320, maxWidth: 767 });
-  const isLargeScreen = useMediaQuery({ minWidth: 768 });
   const theme = useSelector(state => state.theme.value);
 
   function formatDayOfWeek(day) {
@@ -35,7 +34,7 @@ export const DayToolbarDetail = ({ day, month }) => {
       date.getMonth(),
       date.getDate()
     );
-    monday.setDate(date.getDate() - dayOfWeek + 1);
+    monday.setDate(date.getDate() - dayOfWeek + 1 );
 
     const weekDates = [];
     for (let i = 0; i < 7; i++) {
