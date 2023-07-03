@@ -10,7 +10,7 @@
 .TaskModalDark {
   position: fixed;
   width: 303px;
-
+min-height: 362px;
   padding: 48px 18px;
   background-color: rgb(23, 24, 32);
   top: 50%;
@@ -28,6 +28,7 @@
   position: fixed;
   width: 303px;
 
+min-height: 362px;
   padding: 48px 18px;
   background-color: white;
   top: 50%;
@@ -172,7 +173,7 @@ margin-bottom: -10px;
   box-sizing: border-box;
   color: #343434;
   padding: 0 8px;
-   
+   outline: none;
   @media screen and (min-width: 768px) {
     width: 163px;
     height: 46px;
@@ -203,7 +204,7 @@ border-radius: 8px;
   box-sizing: border-box;
   color: white;
   padding: 0 8px;
-
+outline: none;
   @media screen and (min-width: 768px) {
     width: 163px;
     height: 46px;

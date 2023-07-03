@@ -4,12 +4,10 @@ import { LuLogOut } from 'react-icons/lu';
 
 const Button = () => {
   return (
-    <NavLink to="/calendar">
       <button type="submit" className={styles.btn}>
         <p className={styles.textBtn}>Sign Up</p>
         <LuLogOut className={styles.icon} />
       </button>
-    </NavLink>
   );
 };
 

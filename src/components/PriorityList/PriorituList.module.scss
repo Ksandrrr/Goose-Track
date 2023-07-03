@@ -1,0 +1,156 @@
+.WrapperText {
+  position: absolute;
+  width: 100%;
+  height: 112px;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  border-radius: 6px;
+  background: rgb(65 64 64 / 88%);
+  z-index: 999;
+  padding: 30px 20px 20px 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 250ms;
+  // animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+.WrapperTextLight {
+position: absolute;
+    width: 100%;
+    height: 112px;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    border-radius: 6px;
+    background: #dcebf7d6;
+    z-index: 999;
+    padding: 30px 20px 20px 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    opacity: 0;
+    animation-name: fade-in;
+    animation-duration: 250ms;
+    animation-fill-mode: forwards;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.Text {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-weight: 700;
+  display: flex;
+  color: white;
+  gap: 15px;
+  &:hover {
+    color: #3e85f3;
+  }
+}
+.TextLight {
+cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-weight: 700;
+    display: flex;
+    color: rgba(2, 2, 2, 0.705);
+    gap: 15px;
+
+    &:hover {
+        color: #3e85f3;
+    }
+}
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: rgb(255, 255, 255);
+&:hover {
+        color: #3e85f3;
+    }
+}
+.btnLight {
+cursor: pointer;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: rgb(0, 0, 0);
+
+    &:hover {
+        color: #3e85f3;
+    }
+}
+
+@keyframes load-loop {
+    0% {
+        background-position: 100%;
+    }
+
+    40% {
+        background-position: 50%;
+    }
+
+    50% {
+        background-position: 50%;
+    }
+
+    90% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 0%;
+    }
+}
+
+.loader {
+    position: relative;
+    font-family: sans-serif;
+    display: flex;
+    height: auto;
+    width: auto;
+    letter-spacing: 3px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    font-size: 1.45em;
+    color: transparent;
+    background: linear-gradient(to right, #fff 33.3%, #008cdd 33.3%, #008cdd 66.6%, #fff 66.6%) no-repeat;
+    background-size: 300%;
+    background-position: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: infinite 1.4s load-loop ease;
+}
+
+.loader::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    background: linear-gradient(to right, #008cdd 33.3%, transparent 33.3%, transparent 66.6%, #008cdd 66.6%) no-repeat;
+    background-size: 300%;
+    background-position: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation: infinite 1.4s load-loop ease;
+}

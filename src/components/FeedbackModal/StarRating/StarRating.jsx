@@ -31,6 +31,7 @@ import { RiStarSFill } from 'react-icons/ri';
                     onMouseLeave={handleMouseLeave}
                     onClick={() => handleClick(starValue)}
                     color={(hover || rating) >= starValue ? 'rgba(255, 172, 51, 1)' : 'rgba(206, 201, 193, 1)'}
+
                   />
                 </IconContext.Provider>
               );

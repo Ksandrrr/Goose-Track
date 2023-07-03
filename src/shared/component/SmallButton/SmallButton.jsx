@@ -4,11 +4,9 @@ import { NavLink } from 'react-router-dom';
 const SmallButton = () => {
   return (
     <div className={styles.logInButton}>
-      <NavLink to="/login">
-        <a className={styles.link} href="/login">
+        <NavLink to="/login" className={styles.link}>
           Log in
-        </a>
-      </NavLink>
+        </NavLink>
     </div>
   );
 };

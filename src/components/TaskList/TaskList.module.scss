@@ -7,6 +7,7 @@
   position: relative;
   padding-right: 6px;
   margin-left: 8px;
+
 }
 
 .allTask::-webkit-scrollbar {
@@ -56,12 +57,14 @@ margin-left: 8px;
   background: #f7f6f9;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.15);
-
+  position: relative;
   padding: 14px 15px;
   word-wrap: break-word;
   margin-bottom: 15px;
+
 }
 .TaskWrapperDark {
+  position: relative;
   width: 100%;
   background: #171820;
   border-radius: 8px;
@@ -69,7 +72,8 @@ margin-left: 8px;
   color: white;
   padding: 14px 15px;
   word-wrap: break-word;
-margin-bottom: 15px;
+  margin-bottom: 15px;
+
 }
 .TitlTask {
   width: 100%;
@@ -110,3 +114,16 @@ gap: 7px;
 margin-left: auto;
 }
 
+.btn {
+  cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: transparent;
+border: none;
+padding: 3px;
+border-radius: 8px;
+ &:hover {
+background-color: rgba(128, 128, 128, 0.459);
+}
+}

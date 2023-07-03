@@ -1,34 +1,34 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import { lazy, Suspense } from "react";
-import { SideBar } from "../../pages/MainLayout/SideBar/SideBar"
-import { MainLayout } from "../../pages/MainLayout/MainLayout"
-import {AccountPage} from "../../pages/AccountPage/AccountPage"
-import { MainPage } from "../../pages/MainPage/MainPage"
-import { Login } from "../../pages/LoginPage/LoginPage"
-import { RegisterPage } from "../../pages/RegisterPage/RegistrPage"
-// import {ColumnHeadBar} from "../../components/ColumnHeadBar/ColumnHeadBar"
-export const UserRoutes = () => {
+import { lazy,Suspense  } from "react";
 
-    return <BrowserRouter basename="/Goose-Track">
-        <SideBar /> 
+import { PublicRoute } from 'components/PublicRoute/PublicRoute';
+import { PrivateRoute } from 'components/PrivateRoute/PrivateRoute';
+import {Loader} from "../../components/Loader/Loader"
+const AccountPage = lazy(() => import('../../pages/AccountPage/AccountPage'));
+const MainPage = lazy(() => import('../../pages/MainPage/MainPage'))
+const Login = lazy(() => import('../../pages/LoginPage/LoginPage'))
+const  RegisterPage  = lazy(() => import('../../pages/RegisterPage/RegistrPage'))
+const MainLayout = lazy(() => import('../../pages/MainLayout/MainLayout'));
+export const UserRoutes = () => {
+  return (
+    <BrowserRouter basename="/Goose-Track">
+      <Suspense fallback={<Loader/>}>
       <Routes>
-        <Route path="/" element={<MainPage />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/registr" element={<RegisterPage />}></Route>
-        <Route path="/calendar" element={<MainLayout />}></Route>
-        <Route path="/account" element={<AccountPage />}></Route>
-        <Route path="/calendar/task" element={<MainLayout />}></Route>
-        </Routes>
-        {/* <Suspense fallback={<div>Loading...</div>}>
-           <Routes>
-          <Route path="/" element={<HomePage />}></Route>
-          <Route path="/movies" element={<MoviesPage />}></Route>
-          <Route path="/movies/:movieId" element={<MovieDetails />}>
-            <Route path="/movies/:movieId/cast" element={<Cast/>}></Route>
-            <Route path="/movies/:movieId/reviews" element={<Reviews/>}></Route>
-         </Route>
-         <Route path="*" element={<HomePage />}></Route>
-        </Routes>
-        </Suspense> */}
-      </BrowserRouter>
-}
+          <Route element={<PublicRoute />}>
+            <Route path="/" element={<MainPage />}/>
+            <Route path="/login" element={<Login />}/>
+            <Route path="/registr" element={<RegisterPage />}/>
+          </Route>
+
+          <Route element={<PrivateRoute />}>
+            <Route path="/calendar" element={<MainLayout />}/>
+            <Route path="/account" element={<AccountPage />}/>
+            <Route path="/calendar/task" element={<MainLayout />}/>
+          </Route>
+        
+        {/* <Route path="*" element={NotFoundPage} /> */}
+      </Routes>
+      </Suspense>
+    </BrowserRouter>
+  );
+};

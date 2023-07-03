@@ -6,13 +6,15 @@ import { NavLink } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 import Style from './Navigation.module.scss';
+import { useDispatch } from 'react-redux';
 
 import { RiAccountCircleLine } from 'react-icons/ri';
 import { RxCalendar } from 'react-icons/rx';
 import { IconContext } from 'react-icons';
 import { MdLogout } from 'react-icons/md';
-
+import { logout } from '../../redux/auth/auth-operations';
 export const Navigation = () => {
+  const dispatch = useDispatch();
 
   const theme = useSelector((state) => state.theme.value);
   return (
@@ -45,13 +47,12 @@ export const Navigation = () => {
               Calendar
             </NavLink>
           </nav>
-          <NavLink to="/" className={Style.LogOut}>
+          <button className={Style.LogOut} onClick={() => dispatch(logout())}>
             Log out
             <IconContext.Provider value={{ size: '16px' }}>
               <MdLogout />
             </IconContext.Provider>
-          </NavLink>
-
+          </button>
     </>
   );
 };

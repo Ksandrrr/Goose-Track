@@ -3,9 +3,14 @@ import { useMediaQuery } from 'react-responsive';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 
-export const DayToolbarDetail = ({ day, month }) => {
+export const DayToolbarDetail = ({ day, month,setCurrentBtnMonth}) => {
+  setCurrentBtnMonth(false)
   const [selectedDay, setSelectedDay] = useState(null);
 
+if(!day && !month) {
+   day = new Date().getDate()
+   month = new Date().getMonth() + 1
+}
   const isMediumScreen = useMediaQuery({ minWidth: 320, maxWidth: 767 });
   const theme = useSelector(state => state.theme.value);
 
@@ -75,7 +80,8 @@ export const DayToolbarDetail = ({ day, month }) => {
 
 function handleDateClick(day) {
   setSelectedDay(day);
-    }
+  }
+  
   return (
     <div
       className={theme ? Style.DayToolbarWrapper : Style.DayToolbarWrapperDark}

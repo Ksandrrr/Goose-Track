@@ -1,9 +1,71 @@
 import Style from "./FeedbackMassage.module.scss"
 import { useSelector } from 'react-redux';
+import { StarsReviews } from "../../ReviewsSlider/StarsReviews"
+
 export const FeedbackMassage = () => {
     const theme = useSelector(state => state.theme.value);
     
-    return <div className={theme? Style.WrapperMassage : Style.WrapperMassageDark}>
-       <div className={theme ? Style.feedback :Style.feedbackDark}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus vero est maiores officiis expedita hic! Incidunt illum ratione autem deleniti? Distinctio, itaque quam. Accusamus soluta doloribus dolorum cumque hic debitis porro consequuntur fuga ab et libero nostrum, adipisci odit odio ipsa magnam illum quaerat accusantium, explicabo veniam? Ut, exercitationem ducimus repellendus praesentium iste qui. Consectetur voluptas temporibus fugit vel repellat est nemo. Nesciunt quae pariatur et? Fugit dicta sed suscipit a. Quaerat, modi reprehenderit eos vero architecto praesentium nostrum, itaque nihil provident iure unde aspernatur? Provident odit ipsam iusto dignissimos sapiente, architecto, quos dolor odio obcaecati quam libero sint, autem aliquam magni eos reprehenderit deleniti officiis non sunt beatae quae? Incidunt cupiditate inventore magnam voluptates dicta repudiandae, dignissimos quas ea ut recusandae maiores excepturi laudantium sint earum vero tempora minima, ducimus aperiam doloribus sapiente soluta sed ex. Amet, totam deleniti laborum tempora, labore voluptatem natus fugit illo possimus dolorum ipsum libero laudantium, fugiat distinctio quod sed! Deleniti accusantium velit blanditiis, earum odio, eaque sunt impedit vero quasi voluptatibus facilis adipisci natus ut distinctio labore eveniet error! Voluptatibus, accusantium! Porro adipisci autem quam ipsam totam soluta sapiente veritatis earum, voluptatem facilis id maiores explicabo numquam voluptates nihil itaque? Assumenda, nisi eveniet nihil magnam cupiditate eligendi, quia et atque velit reprehenderit ducimus sed rerum sapiente porro, ipsum molestiae ullam voluptatibus voluptate. Molestias cum voluptatibus, hic sequi dolorem excepturi nam fuga repellat iusto accusantium distinctio officia eum est error dignissimos nemo saepe adipisci consequatur quisquam at cumque. Odit maiores quibusdam error aliquam adipisci at ullam, quisquam eligendi esse assumenda doloremque animi, accusamus dicta ipsa rerum, sapiente perferendis facere! Pariatur minima labore qui deleniti repellat, nesciunt fugiat. Impedit, ad. Dolor eius voluptates magnam at ipsa tempora quas saepe praesentium corporis fugiat consectetur aliquam quae, delectus, tempore rerum hic qui fuga voluptatem libero quam corrupti.</div>
-    </div>
+    return (
+      <div className={theme ? Style.WrapperMassage : Style.WrapperMassageDark}>
+        <div className={theme ? Style.feedback : Style.feedbackDark}>
+                
+          <div>
+            <div className={Style.wrapperText}>
+              <div className={Style.wrapperUser}>
+                <p className={Style.PhotoUser}></p>
+                <div>
+                  <p className={Style.NameUser}>Olena Doe </p>
+                  <StarsReviews stars={4} />
+                </div>
+              </div>
+              <div>
+                <p className={Style.Subscript}>
+                  GooseTrack is impressive, the calendar view and filter options
+                  make it easy to stay organized and focused. Highly
+                  recommended.
+                </p>
+              </div>
+            </div>
+          </div>
+
+         <div>
+            <div className={Style.wrapperText}>
+              <div className={Style.wrapperUser}>
+                <p className={Style.PhotoUser}></p>
+                <div>
+                  <p className={Style.NameUser}>Olena Doe </p>
+                  <StarsReviews stars={4} />
+                </div>
+              </div>
+              <div>
+                <p className={Style.Subscript}>
+                  GooseTrack is impressive, the calendar view and filter options
+                  make it easy to stay organized and focused. Highly
+                  recommended.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div className={Style.wrapperText}>
+              <div className={Style.wrapperUser}>
+                <p className={Style.PhotoUser}></p>
+                <div>
+                  <p className={Style.NameUser}>Olena Doe </p>
+                  <StarsReviews stars={4} />
+                </div>
+              </div>
+              <div>
+                <p className={Style.Subscript}>
+                  GooseTrack is impressive, the calendar view and filter options
+                  make it easy to stay organized and focused. Highly
+                  recommended.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
 } 
