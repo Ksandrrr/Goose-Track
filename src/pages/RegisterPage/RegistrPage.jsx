@@ -3,16 +3,17 @@ import styles from './RegistrPage.module.scss';
 import AuthForm from 'components/AuthForm/AuthForm';
 import SmallButton from 'shared/component/SmallButton/SmallButton';
 import Logo from '../../img/SignIn/elements.png'
-
-import { useDispatch } from 'react-redux';
-import { register } from 'redux/auth/auth-operations';
-
-
-export const RegisterPage = () => {
+import { register } from '../../redux/auth/auth-operations';
+import { getAuth } from '../../redux/auth/auth-selectors';
+import { useSelector, useDispatch } from 'react-redux';
+import {Loader} from "../../components/Loader/Loader"
+const RegisterPage = () => {
+  const { loading } = useSelector(getAuth);
   const dispatch = useDispatch();
 
   const onRegister = (data) => {
     dispatch(register(data))
+    console.log(data)
   }
 
 
@@ -22,11 +23,10 @@ export const RegisterPage = () => {
         <h2 className={styles.text}>Sign Up</h2>
         <AuthForm onSubmit={onRegister}/>
       </div>
-      {/* <div className={styles.img}>
-        <img src={Logo} alt="Logo" className={styles.left} />
-      </div> */}
        <img src={Logo} alt="Logo" className={styles.left} />
       <SmallButton />
+      {loading && <div className={styles.wrapperLoader}><Loader/></div>}
     </div>
   );
 };
+export default RegisterPage

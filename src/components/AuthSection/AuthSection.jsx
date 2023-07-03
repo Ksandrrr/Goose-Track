@@ -1,6 +1,5 @@
 import Style from "./AuthSection.module.scss"
 import LogoL from "../../img/MainPage/GOOSE2xLogo.png"
-// import LogoS from "../../img/MainPage/GOOSE-MOBILE.png"
 import { IconContext } from 'react-icons';
 import { FiLogIn } from 'react-icons/fi';
 import { NavLink } from 'react-router-dom';
@@ -16,8 +15,8 @@ export const AuthSection = () => {
         <h1 className={Style.Title}>GooseTrack</h1>
         </div>
         <div className={Style.wrapperBtn}>
-        <NavLink to="/registr"><button className={Style.Sign}><p>Sign up</p></button></NavLink>
-        <NavLink to="/login"><button className={Style.LogIn}>Log in<IconContext.Provider value={{ color: '#3E85F3', size: '15px' }}><FiLogIn/></IconContext.Provider></button></NavLink>
+        <NavLink to="/registr" className={Style.Sign}><p>Sign up</p></NavLink>
+        <NavLink to="/login" className={Style.LogIn}>Log in<IconContext.Provider value={{ color: '#3E85F3', size: '15px' }}><FiLogIn/></IconContext.Provider></NavLink>
       </div>
       
 </section>

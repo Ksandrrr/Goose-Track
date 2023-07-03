@@ -27,8 +27,6 @@ export const Reviews = () => {
           autoplay={{
           delay: 5000
           }}
-          // loop={true}
-          loopAdditionalSlides={2}
           navigation={{
             prevEl: '#prev',
             nextEl: '#next',

@@ -2,9 +2,17 @@ import styles from './LoginPage.module.scss';
 import { LuLogOut } from 'react-icons/lu';
 import Logo from '../../img/SignIn/elements1.png'
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { login } from '../../redux/auth/auth-operations';
+import { useState } from 'react';
 
-
-export const Login = () => {
+ const Login = () => {
+  const [email, setEmail] = useState()
+   const [password, setPassword] = useState()
+  const dispatch = useDispatch();
+  const handleSubmit = () => {
+    dispatch(login({email: email, password: password}))
+  }
   return (
     <div className={styles.container}>
         {/* <img className={styles.img} src={Logo} alt="logoGoos" /> */}
@@ -21,6 +29,7 @@ export const Login = () => {
             name="email"
             required
             placeholder="Enter email"
+            onChange={(e) => setEmail(e.target.value)}
           />
           <label className={styles.label} htmlFor="password">
             Password
@@ -32,12 +41,13 @@ export const Login = () => {
             name="password"
             required
             placeholder="Enter password"
+            onChange={(e) => setPassword(e.target.value)}
           />
         </form>
-        <NavLink to="/calendar"><button type="submit" className={styles.btn}>
+        <button type="submit" className={styles.btn} onClick={handleSubmit}>
           <p className={styles.textBtn}>Log in</p>
           <LuLogOut className={styles.icon} />
-        </button></NavLink>
+        </button>
       </div>
 
       <img src={Logo} alt="Logo" className={styles.right} />
@@ -49,3 +59,4 @@ export const Login = () => {
     </div>
   );
 };
+export default Login

@@ -171,11 +171,35 @@ height: 555px;
   width: 82px;
   padding-top: 8px;
   padding-bottom: 8px;
-  background-color: white;
+  background-color: #E3F3FF;
   border: none;
     font-size: 14px;
       font-weight: 500;
+      color: getColor('full-blue');
 }
+.btnChangeMonthCurrentLight {
+cursor: pointer;
+  width: 82px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: #CAE8FF;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: getColor('full-blue');
+}
+.btnChangeMonthCurrent {
+cursor: pointer;
+  width: 82px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: getColor('full-blue');
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
 .btnChangeMonthDark {
   cursor: pointer;
   width: 82px;
@@ -192,12 +216,36 @@ height: 555px;
   width: 82px;
   padding-top: 8px;
   padding-bottom: 8px;
-  background-color: white;
+background: #E3F3FF;
   border: none;
   border-left: 1px solid rgba(220, 227, 229, 0.5);
     font-size: 14px;
-    
+    color: getColor('full-blue');
       font-weight: 500;
+}
+.btnChangeDayCurrentLight {
+cursor: pointer;
+  width: 82px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+background-color: #CAE8FF;
+  border: none;
+  border-left: 1px solid rgba(220, 227, 229, 0.5);
+  font-size: 14px;
+color: getColor('full-blue');
+  font-weight: 500;
+}
+.btnChangeDayCurrent {
+cursor: pointer;
+  width: 82px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+    background-color: getColor('full-blue');
+  border: none;
+
+  font-size: 14px;
+color: white;
+  font-weight: 500;
 }
 .btnChangeDayDark {
   cursor: pointer;

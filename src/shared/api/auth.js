@@ -1,11 +1,52 @@
-import axios from "axios";
+import axios from 'axios';
 
 const instance = axios.create({
-    BASE_URL: "https://connections-api.herokuapp.com"
-})
+  baseURL: 'https://goose-track-backend-fpo9.onrender.com/',
+});
 
-export const register = async (data) => {
-    const {data: result} = await instance.post("/users/signup", data)
-    return result;
-    
+function setToken(token) {
+  if (token) {
+    return (instance.defaults.headers.common.authorization = `Bearer ${token}`);
+  }
+  instance.defaults.headers.common.authorization = '';
 }
+
+
+
+
+export async function register(data) {
+  const { data: result } = await instance.post('/users/register', data);
+  localStorage.setItem('refreshToken', result.token);
+  setToken(result.token);
+  return result;
+}
+
+export async function login(data) {
+  const { data: result } = await instance.post('/users/login', data);
+  setToken(result.token);
+  localStorage.setItem('refreshToken', result.token);
+  return result;
+}
+
+export async function logout() {
+  const { data } = await instance.post('/users/logout');
+  localStorage.setItem('refreshToken', '');
+  setToken();
+  return data;
+}
+
+export async function getCurrent() {
+  try {
+    const refreshToken = localStorage.getItem('refreshToken');
+    setToken(refreshToken);
+    const { data } = await instance.get('/users/current');
+    // localStorage.setItem('refreshToken', data.refreshToken);
+    return data;
+  } catch (error) {
+    setToken();
+    localStorage.setItem('refreshToken', '');
+    throw error;
+  }
+}
+
+export default instance;

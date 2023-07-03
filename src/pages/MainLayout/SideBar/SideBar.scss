@@ -6,7 +6,7 @@
     top: 0;
     left: -225px;
     width: 225px;
-    height: 100vh;
+    height: 100%;
     background-color: rgb(255, 255, 255);
     padding: 23px;
     z-index: 999;
@@ -15,7 +15,6 @@
             width: 289px;
     }
 
-    
 }
 .BurgerMenuOpen {
     display: flex;
@@ -25,7 +24,7 @@
     top: 0;
     left: 0;
     width: 225px;
-    height: 100vh;
+    height: 100%;
     background-color: rgb(255, 255, 255);
     padding: 23px;
     z-index: 999;

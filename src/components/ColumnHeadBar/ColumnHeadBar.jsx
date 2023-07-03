@@ -38,13 +38,13 @@ export const ColumnHeadBar = (day) => {
   return (
     <section className={theme ? Style.ColumnHeadBar : Style.ColumnHeadBarDark}>
       {phoneTablet && <Swiper
-        modules={[ Scrollbar ]}
+        modules={[Scrollbar]}
         spaceBetween={36}
         slidesPerView={isMediumScreen ? 1 : 2}
         scrollbar={{ draggable: isLargeScreen ? false : true }}
-       
+
       >
-        <SwiperSlide>
+        <SwiperSlide >
           <div className={theme ? Style.wrapperTask : Style.wrapperTaskDark}>
             <div className={Style.wrappertitle}>
               <p className={theme ? Style.taskTitle : Style.taskTitleDark}>
@@ -56,7 +56,8 @@ export const ColumnHeadBar = (day) => {
                 <HiOutlinePlusCircle />
               </IconContext.Provider>
             </div>
-            <TaskList day={day} currentProgress="to-do" />
+            <div>
+            <TaskList date={day} currentProgress="to-do" /></div>
             <button onClick={handleOpenModal} className={theme ? Style.taskBtn : Style.taskBtnDark} name='to-do'>
               <IconContext.Provider value={{ size: '20px' }}>
                 <AiOutlinePlus />
@@ -77,7 +78,7 @@ export const ColumnHeadBar = (day) => {
                 <HiOutlinePlusCircle />
               </IconContext.Provider>
             </div>
-            <TaskList day={day} currentProgress="in-progress" />
+            <TaskList date={day} currentProgress="in-progress" />
             <button onClick={handleOpenModal} className={theme ? Style.taskBtn : Style.taskBtnDark} name='in-progress'>
               <IconContext.Provider value={{ size: '20px' }}>
                 <AiOutlinePlus />
@@ -98,7 +99,7 @@ export const ColumnHeadBar = (day) => {
                 <HiOutlinePlusCircle />
               </IconContext.Provider>
             </div>
-            <TaskList day={day} currentProgress="done" />
+            <TaskList date={day} currentProgress="done" />
             <button onClick={handleOpenModal} className={theme ? Style.taskBtn : Style.taskBtnDark} name='done'>
               {' '}
               <IconContext.Provider value={{ size: '20px' }}>
@@ -121,7 +122,7 @@ export const ColumnHeadBar = (day) => {
                 <HiOutlinePlusCircle />
               </IconContext.Provider>
             </div>
-        <TaskList day={day} currentProgress="to-do" />
+        <TaskList date={day} currentProgress="to-do" />
             <button onClick={handleOpenModal} className={theme ? Style.taskBtn : Style.taskBtnDark} name='to-do'>
               <IconContext.Provider value={{ size: '20px' }}>
                 <AiOutlinePlus />
@@ -140,7 +141,7 @@ export const ColumnHeadBar = (day) => {
                 <HiOutlinePlusCircle />
               </IconContext.Provider>
             </div>
-            <TaskList day={day} currentProgress="in-progress" />
+            <TaskList date={day} currentProgress="in-progress" />
             <button onClick={handleOpenModal} className={theme ? Style.taskBtn : Style.taskBtnDark}  name='in-progress'>
               <IconContext.Provider value={{ size: '20px' }}>
                 <AiOutlinePlus />
@@ -160,7 +161,7 @@ export const ColumnHeadBar = (day) => {
                 <HiOutlinePlusCircle />
               </IconContext.Provider>
             </div>
-             <TaskList day={day} currentProgress="done" />
+          <TaskList date={day} currentProgress="done" />
             <button onClick={handleOpenModal} className={theme ? Style.taskBtn : Style.taskBtnDark} name='done'>
               {' '}
                <IconContext.Provider value={{ size: '20px' }}>
@@ -171,7 +172,7 @@ export const ColumnHeadBar = (day) => {
           </div>
               </>
       }
-      {taskModal && <TaskForm setTaskModal={setTaskModal} progress={progress} day={day} />}
+      {taskModal && <TaskForm setTaskModal={setTaskModal} progress={progress} day={day.day} month={day.month} year={day.year}/>}
     </section>
   );
 };
