@@ -1,5 +1,5 @@
 import styles from './button.module.scss';
-import { NavLink } from 'react-router-dom';
+
 import { LuLogOut } from 'react-icons/lu';
 
 const Button = () => {
