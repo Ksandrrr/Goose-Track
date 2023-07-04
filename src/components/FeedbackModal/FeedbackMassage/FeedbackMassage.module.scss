@@ -27,6 +27,14 @@ max-height: 180px;
 padding-right: 15px;
 
 }
+.feedback {
+    display: flex;
+        flex-direction: column;
+        gap: 15px;
+        overflow: auto;
+        max-height: 180px;
+        padding-right: 15px;
+}
 .feedbackDark::-webkit-scrollbar {
     width: 6px;
    
@@ -68,29 +76,52 @@ overflow: auto;
 .wrapperUser {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 .Subscript {
-    margin-top: 5px;
+margin-left: 50px;
     font-size: 14px;
+    color: rgba(255, 255, 255, 0.70);
+    font-size: 14px;
+    margin-bottom: 10px;
 }
-
+.SubscriptLight {
+margin-left: 50px;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
 .NameUser {
-    margin-bottom: 5px;
-    font-size: 18px;
+font-size: 14px;
     font-weight: 700;
+    margin-right: 3px;
+    color: white;
+}
+.NameUserLight {
+font-size: 14px;
+    font-weight: 700;
+    margin-right: 3px;
+    color: rgb(0, 0, 0);
 }
 
 .PhotoUser {
-    width: 50px;
-    height: 50px;
-    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 40px;
+    height: 40px;
+// background: #6190E8;
+//     background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);
+//     background: linear-gradient(to right, #A7BFE8, #6190E8);
+
+background-color: white;
     border-radius: 50%;
+    overflow: hidden;
 }
 
 .Arrow {
-
     margin-top: 10px;
     display: flex;
     justify-content: space-evenly;
@@ -112,4 +143,11 @@ overflow: auto;
     justify-content: center;
     gap: 10px;
 
+}
+.wrapperText {
+border-bottom: 1px solid rgb(38 39 49);
+
+}
+.wrapperTextLight {
+border-bottom: 1px solid rgb(153 216 255 / 24%);
 }

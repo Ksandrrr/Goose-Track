@@ -51,11 +51,11 @@ import { useState } from 'react';
       </div>
 
       <img src={Logo} alt="Logo" className={styles.right} />
-       <NavLink to="/registr"><div className={styles.logInButton}>
-        <a className={styles.link} href="/login">
+       <div className={styles.logInButton}>
+        <NavLink to="/registr" className={styles.link}> 
           Sign Up
-        </a>
-      </div></NavLink>
+        </NavLink>
+      </div>
     </div>
   );
 };
