@@ -24,17 +24,16 @@ const taskSlice = createSlice({
       })
       .addCase(taskMonth.rejected, (state, { payload }) => {
         state.loading = false;
+        state.items = [];
         state.error = payload;
       })
       .addCase(addTask.pending, state => {
         state.loading = true;
         state.error = null;
-
       })
       .addCase(addTask.fulfilled, (state, { payload }) => {
         state.loading = false;
         state.items.push(payload);
-
       })
       .addCase(addTask.rejected, (state, { payload }) => {
         state.loading = false;
@@ -43,7 +42,6 @@ const taskSlice = createSlice({
       .addCase(delTask.pending, state => {
         state.loading = true;
         state.error = null;
-
       })
       .addCase(delTask.fulfilled, (state, { payload }) => {
         state.loading = false;
@@ -57,13 +55,11 @@ const taskSlice = createSlice({
       .addCase(edit.pending, state => {
         state.loading = true;
         state.error = null;
-
       })
       .addCase(edit.fulfilled, (state, { payload }) => {
         state.loading = false;
         state.message = payload
         const index = state.items.findIndex(item => item._id === payload._id);
-        console.log(index)
         state.items[index] = payload;
       })
       .addCase(edit.rejected, (state, { payload }) => {

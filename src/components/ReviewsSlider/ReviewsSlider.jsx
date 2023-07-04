@@ -4,17 +4,38 @@ import {StarsReviews} from "./StarsReviews"
 import { IconContext } from 'react-icons';
 import { BsArrowLeft } from 'react-icons/bs';
 import { BsArrowRight } from 'react-icons/bs';
-
-
+import { useSelector } from 'react-redux';
+import { getReviews } from 'redux/reviews/reviews-selectors';
 import { Navigation, Pagination, A11y,Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { FaUserSecret } from 'react-icons/fa';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import "swiper/css/autoplay"
 export const Reviews = () => {
-    const screenWidth = window.screen.width
+  const reviews = useSelector(getReviews);
+  const screenWidth = window.screen.width
+  
+   const element = reviews.map(({ rating, comment, name, _id }) => (
+   <SwiperSlide key={_id}>
+            <div className={Style.wrapperText} >
+              <div className={Style.wrapperUser}>
+                <div className={Style.PhotoUser}><IconContext.Provider value={{ size: '26px', color: "#1e1e1e" }}><FaUserSecret/>  </IconContext.Provider></div>
+                <div>
+             <p className={Style.NameUser}>{name}</p>
+                  <StarsReviews stars={Number(rating)} />
+                </div>
+              </div>
+              <div>
+                <p className={Style.Subscript}>
+                 {comment}
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+  ));
   return (
     <section className={Style.Reviews}>
       <h3 className={Style.ReviewsTitle}>reviews</h3>
@@ -32,60 +53,7 @@ export const Reviews = () => {
             nextEl: '#next',
           }}
         >
-          <SwiperSlide>
-            <div className={Style.wrapperText}>
-              <div className={Style.wrapperUser}>
-                <p className={Style.PhotoUser}></p>
-                <div>
-                  <p className={Style.NameUser}>Olena Doe </p>
-                  <StarsReviews stars={4} />
-                </div>
-              </div>
-              <div>
-                <p className={Style.Subscript}>
-                  GooseTrack is impressive, the calendar view and filter options
-                  make it easy to stay organized and focused. Highly
-                  recommended.
-                </p>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={Style.wrapperText}>
-              <div className={Style.wrapperUser}>
-                <p className={Style.PhotoUser}></p>
-                <div>
-                  <p className={Style.NameUser}>Olena Doe </p>
-                  <StarsReviews stars={4} />
-                </div>
-              </div>
-              <div>
-                <p className={Style.Subscript}>
-                  GooseTrack is impressive, the calendar view and filter options
-                  make it easy to stay organized and focused. Highly
-                  recommended.
-                </p>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={Style.wrapperText}>
-              <div className={Style.wrapperUser}>
-                <p className={Style.PhotoUser}></p>
-                <div>
-                  <p className={Style.NameUser}>Olena Doe </p>
-                  <StarsReviews stars={4} />
-                </div>
-              </div>
-              <div>
-                <p className={Style.Subscript}>
-                  GooseTrack is impressive, the calendar view and filter options
-                  make it easy to stay organized and focused. Highly
-                  recommended.
-                </p>
-              </div>
-            </div>
-          </SwiperSlide>
+         {element}
         </Swiper>
       </div>
 

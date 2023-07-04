@@ -3,8 +3,7 @@ import { IconContext } from 'react-icons';
 import { useState } from 'react';
 import { RiStarSFill } from 'react-icons/ri';
 
- export const StarRating = () => {
-  const [rating, setRating] = useState(null);
+ export const StarRating = ({star,setStar}) => {
   const [hover, setHover] = useState(null);
 
   const handleMouseEnter = (index) => {
@@ -16,7 +15,7 @@ import { RiStarSFill } from 'react-icons/ri';
   };
 
   const handleClick = (index) => {
-    setRating(index);
+    setStar(index);
   };
 
    return (
@@ -30,7 +29,7 @@ import { RiStarSFill } from 'react-icons/ri';
                     onMouseEnter={() => handleMouseEnter(starValue)}
                     onMouseLeave={handleMouseLeave}
                     onClick={() => handleClick(starValue)}
-                    color={(hover || rating) >= starValue ? 'rgba(255, 172, 51, 1)' : 'rgba(206, 201, 193, 1)'}
+                    color={(hover || star) >= starValue ? 'rgba(255, 172, 51, 1)' : 'rgba(206, 201, 193, 1)'}
 
                   />
                 </IconContext.Provider>

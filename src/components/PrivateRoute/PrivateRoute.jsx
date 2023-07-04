@@ -11,7 +11,7 @@ export const PrivateRoute = () => {
   }
 
   if (!isLogin) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/" />;
 
   }
   return <Outlet />;

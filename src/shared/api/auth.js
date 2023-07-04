@@ -39,9 +39,8 @@ export async function getCurrent() {
   try {
     const refreshToken = localStorage.getItem('refreshToken');
     setToken(refreshToken);
-    const { data } = await instance.get('/users/current');
-    // localStorage.setItem('refreshToken', data.refreshToken);
-    return data;
+    const result = await instance.get('/users/current');
+    return result;
   } catch (error) {
     setToken();
     localStorage.setItem('refreshToken', '');
