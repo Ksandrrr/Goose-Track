@@ -5,12 +5,12 @@ import { isUserLogin,getAuth } from '../../redux/auth/auth-selectors';
 import {Loader} from "../Loader/Loader"
 export const PrivateRoute = () => {
   const isLogin = useSelector(isUserLogin);
-  const {loading} = useSelector(getAuth);
+  const {loading, token} = useSelector(getAuth);
   if (loading) {
     return <Loader/>;
   }
 
-  if (!isLogin) {
+   if(!isLogin && !token) {
     return <Navigate to="/" />;
 
   }

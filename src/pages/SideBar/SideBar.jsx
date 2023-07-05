@@ -1,6 +1,6 @@
 import Style from './SideBar.module.scss';
-import { Navigation } from '../../../components/Navigation/Navigation';
-import { UserInfo } from '../../../components/UserInfo/UserInfo';
+import { Navigation } from '../../components/Navigation/Navigation';
+import { UserInfo } from '../../components/UserInfo/UserInfo';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 

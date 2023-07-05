@@ -25,7 +25,7 @@ const RegisterPage = () => {
       </div>
        <img src={Logo} alt="Logo" className={styles.left} />
       <SmallButton />
-      {loading && <div className={styles.wrapperLoader}><Loader/></div>}
+      {loading && <Loader/>}
     </div>
   );
 };

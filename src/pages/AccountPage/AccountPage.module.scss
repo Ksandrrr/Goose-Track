@@ -1,0 +1,82 @@
+@import '/src/styles/styles.scss';
+.AccountPage {
+background-color: getColor('dark-light-theme');
+    padding-bottom: 32px;
+    min-height: 100vh;
+
+    @media screen and (min-width: 1200px) {
+        padding-left: 289px;
+    }
+}
+.AccountPageDark {
+background-color: #F7F6F9;;
+    padding-bottom: 32px;
+    min-height: 100vh;
+
+    @media screen and (min-width: 1200px) {
+        padding-left: 289px;
+    }
+}
+.wrapper {
+    background-color: #21222C;
+
+    border-radius: 16px;
+    padding: 59px 18px 40px 18px;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+        padding: 40px 18px 40px 18px;
+    }
+}
+
+.wrapperDark {
+    background-color: #fff;
+    
+        border-radius: 16px;
+        padding: 59px 18px 40px 18px;
+        text-align: center;
+    
+        @media screen and (min-width: 768px) {
+            padding: 40px 18px 40px 18px;
+        }
+}
+.name {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: #343434;
+}
+.nameDark {
+    font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 18px;
+    
+        color: #ffffff;
+}
+.user {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: #343434;
+    margin-top: 4px;
+    margin-bottom: 40px;
+}
+.userDark {
+    font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 14px;
+    
+        color: rgba(250, 250, 250, 0.30);
+        margin-top: 4px;
+        margin-bottom: 40px;
+}

@@ -1,0 +1,61 @@
+@import '/src/styles/styles.scss';
+
+.label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: #111111;
+
+    @media screen and (min-width: 768px) {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+.input {
+    padding: 12px 14px;
+    width: 299px;
+    height: 42px;
+
+    background: #ffffff;
+    border: 1px solid rgba(220, 227, 229, 0.6);
+    border-radius: 8px;
+
+    margin-top: 8px;
+
+    &::placeholder {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+
+        color: #111111;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 354px;
+        height: 46px;
+        padding: 14px 18px;
+        font-size: 16px;
+    }
+}
+
+
+.div {
+    margin-bottom: 18px;
+
+    @media screen and (min-width:768px) {
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.div:nth-child(5) {
+    margin-bottom: 0;
+}

@@ -10,11 +10,23 @@ import { TaskForm } from "../TaskForm/TaskForm"
 import { useState } from 'react';
 import {PriorityLisk} from "../PriorityList/PriorityList"
 export const TaskList = ({ date, currentProgress }) => {
+  const dispatch = useDispatch();
   const [openTaskId, setOpenTaskId] = useState(null);
   const [changePriority, setChangePriority] = useState(null);
   const { items } = useSelector(getTask);
   const theme = useSelector(state => state.theme.value);
-    const dispatch = useDispatch();
+
+  const currentDate = new Date();
+  const day = currentDate.getDate(); 
+  const month = (currentDate.getMonth() + 1); 
+  const year = currentDate.getFullYear();
+  if (!date.day) {
+    date = {
+      day: day,
+      month: month,
+      year: year,
+    }
+  }
   const elements = items.filter(({ day, progress }) => {
     return Number(day) === date.day && progress === currentProgress;
   });
