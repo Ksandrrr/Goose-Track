@@ -1,37 +1,45 @@
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Style from './Calendar.module.scss';
 import { getDaysInMonth } from './CalendarCalculations/CalendarCalculations';
 import { DayToolbar } from '../DayToolbar/DayToolbar';
 import { DayToolbarDetail } from '../DayToolbar/DayToolbarDetail/DayToolbarDetail';
 import { NavLink } from 'react-router-dom';
 import { ColumnHeadBar } from '../ColumnHeadBar/ColumnHeadBar';
-
 import { getTask } from '../../redux/task/task-selectors';
-
+import {Loader} from "../Loader/Loader"
 import { IoIosArrowForward } from 'react-icons/io';
 import { IoIosArrowBack } from 'react-icons/io';
 import { IconContext } from 'react-icons';
+import { taskMonth } from '../../redux/task/task-operation';
 
 export const CalendarComponent = () => {
-  const { items } = useSelector(getTask);
+  const dispatch = useDispatch();
 
+  const { items,loading } = useSelector(getTask);
   const [dayDetail, setDayDetail] = useState(false);
   const [day, setDay] = useState();
-  const [month, setMonth] = useState();
-  const [year, setYear] = useState();
+  const [Month, setMonth] = useState();
+  const [Year, setYear] = useState();
   const [currentBtnMonth, setCurrentBtnMonth] = useState(true);
   const theme = useSelector(state => state.theme.value);
 
-
   const [currentMonth, setCurrentMonth] = useState(new Date());
+  const year = currentMonth.getFullYear();
+  const month = currentMonth.getMonth();
 
+  useEffect(() => {
+    dispatch(
+      taskMonth({
+        month: (currentMonth.getMonth() + 1).toString(),
+        year: currentMonth.getFullYear().toString(),
+      })
+    );
+  }, [dispatch, currentMonth]);
 
   const generateCalendar = () => {
     const calendar = [];
-    const year = currentMonth.getFullYear();
     const today = new Date();
-    const month = currentMonth.getMonth();
     const daysInMonth = getDaysInMonth(year, month);
     const firstDayOfMonth = new Date(year, month, 1).getDay();
     const lastDayOfMonth = new Date(year, month, daysInMonth).getDay();
@@ -84,21 +92,18 @@ export const CalendarComponent = () => {
           >
             {i}
           </p>
-          {items.find(
-            ({ day,month }) => Number(day) === i
-          ) && (
+          {items.find(({ day }) => Number(day) === i) && (
             <div
               className={
-                items.find(({day,priority}) => Number(day) === i)?.priority || ''
+                items.find(({ day }) => Number(day) === i)?.priority || ''
               }
             >
-             {items.find(({ day, title }) =>  Number(day) === i).title}
+              {items.find(({ day }) => Number(day) === i).title}
             </div>
-           )} 
+          )}
           {items.filter(({ day }) => Number(day) === i).length > 1 && (
             <div className={Style.TaskNumber}>
-              See all +
-              {items.filter(({ day }) => Number(day) === i).length - 1}
+              See all +{items.filter(({ day }) => Number(day) === i).length - 1}
             </div>
           )}
         </div>
@@ -138,12 +143,12 @@ export const CalendarComponent = () => {
     <>
       <div className={Style.calendar}>
         <div className={Style.calendarHeader}>
-          {/* <h2>
-            {currentMonth.toLocaleString('default', {
+          <h2>
+            {/* {currentMonth.toLocaleString('default', {
               month: 'long',
               year: 'numeric',
-            })}
-          </h2> */}
+            })} */}
+          </h2>
 
           <div className={theme ? Style.BtnWrapper : Style.BtnWrapperDark}>
             <button
@@ -202,22 +207,39 @@ export const CalendarComponent = () => {
             </button>
           </div>
         </div>
-        {!dayDetail ? (
+        {/* {!dayDetail ? (
           <DayToolbar />
         ) : (
           <DayToolbarDetail
-            day={day}
-            month={month}
-            setCurrentBtnMonth={setCurrentBtnMonth}
-          />
+        day={day}
+        month={Month}
+        setCurrentBtnMonth={setCurrentBtnMonth}
+        setDayDetail={setDayDetail} 
+      />
         )}
         {!dayDetail ? (
           <NavLink to="/calendar/task">
             <div className={Style.calendarColumns}>{generateCalendar()}</div>
           </NavLink>
         ) : (
-          <ColumnHeadBar day={day} month={month + 1} year={year} />
+          <ColumnHeadBar day={day} month={Month + 1} year={Year} />
+        )} */}
+        {!dayDetail ? (<>
+          <DayToolbar />
+          <NavLink to="/calendar/task">
+            <div className={Style.calendarColumns}>{generateCalendar()}</div>
+          </NavLink></>
+        ) : (<>
+          <DayToolbarDetail
+        day={day}
+        month={Month}
+        setCurrentBtnMonth={setCurrentBtnMonth}
+        setDayDetail={setDayDetail} 
+            />
+            <ColumnHeadBar day={day} month={Month + 1} year={Year} />
+            </>
         )}
+        {loading && <Loader/>}
       </div>
     </>
   );

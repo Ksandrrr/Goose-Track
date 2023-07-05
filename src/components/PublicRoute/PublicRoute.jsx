@@ -1,22 +1,11 @@
 
 import { Navigate, Outlet } from 'react-router-dom';
 import { getAuth } from '../../redux/auth/auth-selectors';
-import { useSelector, useDispatch } from 'react-redux';
-import { taskMonth } from "../../redux/task/task-operation"
-import { useEffect } from 'react';
-export const PublicRoute = () => {
-   const dispatch = useDispatch();
-  const { isLogin, token } = useSelector(getAuth);
-  
-const currentDate = new Date();
-const currentMonth = (currentDate.getMonth() + 1).toString(); 
-const currentYear = currentDate.getFullYear().toString();
+import { useSelector } from 'react-redux';
 
-    useEffect(()=> {
-      if (token !== '') {
-            dispatch(taskMonth({month: currentMonth,year: currentYear}))
-        }
-    }, [dispatch, token, currentMonth, currentYear])
+export const PublicRoute = () => {
+
+  const { isLogin } = useSelector(getAuth);
   
   if (isLogin) {
  

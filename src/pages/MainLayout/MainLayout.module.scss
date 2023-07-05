@@ -2,6 +2,7 @@
 .wrapperBGAuthPage {
   background-color: #f7f6f9;
 padding-bottom: 32px;
+min-height: 100vh;
 @media screen and (min-width: 1200px) {
         padding-left: 289px;
     }
@@ -9,13 +10,9 @@ padding-bottom: 32px;
 .wrapperBGAuthPageDark {
   background-color: getColor('dark-light-theme');
 padding-bottom: 32px;
+min-height: 100vh;
 @media screen and (min-width: 1200px) {
     padding-left: 289px;
   }
 
-}
-.Wrapper {
-  // width: 100%;
-  // height: calc(100vh - 80px);
-  // background-color: getColor('dark-light-theme');
 }

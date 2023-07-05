@@ -14,67 +14,66 @@ if(!day && !month) {
   const isMediumScreen = useMediaQuery({ minWidth: 320, maxWidth: 767 });
   const theme = useSelector(state => state.theme.value);
 
-  function formatDayOfWeek(day) {
-    if (isMediumScreen) {
-      const daysOfWeek = ['S', 'M', 'T', 'W', 'T', 'S', 'S'];
-      return daysOfWeek[day];
-    } else {
-      const daysOfWeek = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'SAT', 'SUN'];
-      return daysOfWeek[day];
-    }
+ function formatDayOfWeek(day) {
+  if (isMediumScreen) {
+    const daysOfWeek = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+    return daysOfWeek[day];
+  } else {
+    const daysOfWeek = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+    return daysOfWeek[day];
   }
+}
+
 
   function getDaysInMonth(month, year) {
     return new Date(year, month, 0).getDate();
   }
 
-  function getDateOfWeek(day, month) {
-    const year = new Date().getFullYear();
-    const daysInMonth = getDaysInMonth(month, year);
-    const date = new Date(year, month - 1, day);
-    const dayOfWeek = date.getDay();
+function getDateOfWeek(day, month) {
+  const year = new Date().getFullYear();
+  const daysInMonth = getDaysInMonth(month, year);
+  const date = new Date(year, month - 1, day);
+  const dayOfWeek = date.getDay();
 
-    const monday = new Date(
-      date.getFullYear(),
-      date.getMonth(),
-      date.getDate()
-    );
-    monday.setDate(date.getDate() - dayOfWeek + 1 );
+  const monday = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  monday.setDate(date.getDate() - dayOfWeek + 1);
 
-    const weekDates = [];
-    for (let i = 0; i < 7; i++) {
-      const nextDay = new Date(monday);
-      nextDay.setDate(monday.getDate() + i);
-      if (
-        nextDay.getMonth() + 1 === month &&
-        nextDay.getDate() <= daysInMonth
-      ) {
-        weekDates.push(nextDay);
-      } else if (
-        nextDay.getMonth() + 1 === month + 1 &&
-        nextDay.getDate() <= daysInMonth + 7
-      ) {
-        weekDates.push(nextDay);
-      } else if (
-        nextDay.getMonth() + 1 === month - 1 &&
-        nextDay.getDate() <= daysInMonth + 7
-      ) {
-        weekDates.push(nextDay);
-      }
+  // Если день недели является воскресеньем, отобразить прошлую неделю
+  if (dayOfWeek === 0) {
+    monday.setDate(monday.getDate() - 7);
+  }
+
+  const weekDates = [];
+  for (let i = 0; i < 7; i++) {
+    const nextDay = new Date(monday);
+    nextDay.setDate(monday.getDate() + i);
+    if (
+      nextDay.getMonth() + 1 === month &&
+      nextDay.getDate() <= daysInMonth
+    ) {
+      weekDates.push(nextDay);
+    } else if (
+      nextDay.getMonth() + 1 === month + 1 &&
+      nextDay.getDate() <= daysInMonth + 7
+    ) {
+      weekDates.push(nextDay);
+    } else if (
+      nextDay.getMonth() + 1 === month - 1 &&
+      nextDay.getDate() <= daysInMonth + 7
+    ) {
+      weekDates.push(nextDay);
     }
+  }
 
+  const formattedDates = weekDates.map((date) => {
+    const dayOfWeek = formatDayOfWeek(date.getDay());
+    const day = date.getDate();
 
-    
-    const formattedDates = weekDates.map(date => {
-      const dayOfWeek = formatDayOfWeek(date.getDay());
-      const day = date.getDate();
-      
-      return { dayOfWeek, day };
-    });
+    return { dayOfWeek, day };
+  });
 
-    return formattedDates;
-  }  
-
+  return formattedDates;
+}
   const currentDate = new Date().getDate();
   const weekDates = getDateOfWeek(day, month + 1);
 

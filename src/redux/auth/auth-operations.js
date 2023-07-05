@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-// import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 import * as api from '../../shared/api/auth';
 
 export const login = createAsyncThunk(
@@ -41,17 +41,38 @@ export const logout = createAsyncThunk(
         }
     }
 )
-export const refresh = createAsyncThunk(
-  'auth/refresh',
-  async (_, { rejectWithValue }) => {
-    try {
-      const result = await api.getCurrent();
-      return result;
-    } catch ({ response }) {
-      return rejectWithValue(response.data.message);
+// export const refresh = createAsyncThunk(
+//   'auth/refresh',
+//   async (_, { rejectWithValue }) => {
+//     try {
+//       const result = await api.getCurrent();
+//       return result;
+//     } catch ({ response }) {
+//       return rejectWithValue(response.data.message);
+//     }
+//   }
+// );
+export const current = createAsyncThunk(
+    "auth/current",
+    async (_, { rejectWithValue, getState }) => {
+        try {
+            const { auth } = getState ();
+            const result = await api.getCurrent(auth.token);
+            return result;
+        }
+        catch ({ response }) {
+            return rejectWithValue(response.data);
+        }
+    },
+    {
+        condition: (_, { getState }) => {
+            const {auth} = getState();
+            if(!auth.token) {
+                return false;
+            }
+        }
     }
-  }
-);
+)
 // export const getUserInfo = createAsyncThunk(
 //   'user/getUserInfo',
 //   async (_, { rejectWithValue }) => {

@@ -16,7 +16,8 @@ const taskSlice = createSlice({
     builder
      .addCase(taskMonth.pending, state => {
         state.loading = true;
-        state.error = null;
+       state.error = null;
+       state.items = [];
       })
       .addCase(taskMonth.fulfilled, (state, { payload }) => {
         state.loading = false;
