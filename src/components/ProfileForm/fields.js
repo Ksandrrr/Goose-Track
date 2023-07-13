@@ -9,7 +9,7 @@ const fields = {
     birthday: {
         label: 'Birthday',
         type: "date",
-        name: "password",
+        name: "birthday",
         placeholder: "25/08/1995",
         required: true,
     },

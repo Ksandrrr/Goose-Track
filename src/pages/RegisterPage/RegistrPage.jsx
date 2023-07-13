@@ -13,7 +13,6 @@ const RegisterPage = () => {
 
   const onRegister = (data) => {
     dispatch(register(data))
-    console.log(data)
   }
 
 

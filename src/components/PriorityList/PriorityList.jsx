@@ -5,7 +5,7 @@ import { IconContext } from 'react-icons';
 import { edit } from '../../redux/task/task-operation.js';
 import { useSelector, useDispatch } from 'react-redux';
 import { getTask } from '../../redux/task/task-selectors';
-// import { LoaderTask } from "../Loader/LoaderTask"
+
 import { useEffect } from 'react';
 import { useState } from 'react';
 export const PriorityLisk = ({ progress, setChangePriority, id }) => {

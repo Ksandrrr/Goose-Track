@@ -207,23 +207,7 @@ export const CalendarComponent = () => {
             </button>
           </div>
         </div>
-        {/* {!dayDetail ? (
-          <DayToolbar />
-        ) : (
-          <DayToolbarDetail
-        day={day}
-        month={Month}
-        setCurrentBtnMonth={setCurrentBtnMonth}
-        setDayDetail={setDayDetail} 
-      />
-        )}
-        {!dayDetail ? (
-          <NavLink to="/calendar/task">
-            <div className={Style.calendarColumns}>{generateCalendar()}</div>
-          </NavLink>
-        ) : (
-          <ColumnHeadBar day={day} month={Month + 1} year={Year} />
-        )} */}
+
         {!dayDetail ? (<>
           <DayToolbar />
           <NavLink to="/calendar/task">

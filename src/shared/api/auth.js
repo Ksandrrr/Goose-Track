@@ -58,5 +58,15 @@ export const getCurrent = async (token)=> {
         throw error;
     }
 }
+export async function updateUserInfo(data) {
+  const { data: result } = await instance.patch('/users/me', data);
+
+  return result;
+}
+export async function updateUserAvatar(data) {
+  const { data: result } = await instance.patch('/users/avatars', data);
+
+  return result;
+}
 
 export default instance;
