@@ -41,17 +41,7 @@ export const logout = createAsyncThunk(
         }
     }
 )
-// export const refresh = createAsyncThunk(
-//   'auth/refresh',
-//   async (_, { rejectWithValue }) => {
-//     try {
-//       const result = await api.getCurrent();
-//       return result;
-//     } catch ({ response }) {
-//       return rejectWithValue(response.data.message);
-//     }
-//   }
-// );
+
 export const current = createAsyncThunk(
     "auth/current",
     async (_, { rejectWithValue, getState }) => {
@@ -86,15 +76,26 @@ export const current = createAsyncThunk(
 //   }
 // );
 
-// export const updateUserInfo = createAsyncThunk(
-//   'user/updateUserInfo',
-//   async (data, { rejectWithValue }) => {
-//     try {
-//       const res = await api.updateUserInfo(data);
-//       return res;
-//     } catch ({ response }) {
-//     //   Notify.failure(response.data.message);
-//       return rejectWithValue(response.data.message);
-//     }
-//   }
-// );
+export const updateUserInfo = createAsyncThunk(
+  'auth/me',
+  async (data, { rejectWithValue }) => {
+    try {
+      const res = await api.updateUserInfo(data);
+      return res;
+    } catch ({ response }) {
+      return rejectWithValue(response.data.message);
+    }
+  }
+);
+
+export const updateAvatar = createAsyncThunk(
+  'user/updateAvatar',
+  async (data, { rejectWithValue }) => {
+    try {
+      const res = await api.updateUserAvatar(data);
+      return res;
+    } catch ({ response }) {
+      return rejectWithValue(response.data.message);
+    }
+  }
+);

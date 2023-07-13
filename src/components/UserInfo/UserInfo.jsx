@@ -35,7 +35,9 @@ export const UserInfo = () => {
           </IconContext.Provider>
         </button>
         <p className={theme === true ? Style.UserName : Style.UserNameDark}>{User.name}</p>
-        <div className={Style.UserPhoto}></div>
+        <div className={Style.UserPhoto}>
+          {User.avatarURL && <img className={Style.imgUserPhoto} src={User.avatarURL} alt="UserPhoto"/>}
+          </div>
         {feedback && <FeedbackModal setFeedback={setFeedback} />}
       </div>
     </>

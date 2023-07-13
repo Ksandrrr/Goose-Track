@@ -101,6 +101,15 @@ width: 30px;
 height: 30px;
 border-radius: 50%;
 background-color: rgb(56, 71, 66);
+overflow: hidden;
+outline: 2px solid rgba(62, 133, 243, 1);
+}
+.UserPhoto {
+  width: 30px;
+    height: 30px;
+object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
 }
 .TaskPriority {
     font-size: 10px;

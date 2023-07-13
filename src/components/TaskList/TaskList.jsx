@@ -9,13 +9,15 @@ import { delTask } from "../../redux/task/task-operation"
 import { TaskForm } from "../TaskForm/TaskForm"
 import { useState } from 'react';
 import {PriorityLisk} from "../PriorityList/PriorityList"
+
+import { getUser } from '../../redux/auth/auth-selectors';
 export const TaskList = ({ date, currentProgress }) => {
   const dispatch = useDispatch();
   const [openTaskId, setOpenTaskId] = useState(null);
   const [changePriority, setChangePriority] = useState(null);
   const { items } = useSelector(getTask);
   const theme = useSelector(state => state.theme.value);
-
+const User = useSelector(getUser);
   const currentDate = new Date();
   const day = currentDate.getDate(); 
   const month = (currentDate.getMonth() + 1); 
@@ -52,7 +54,9 @@ export const TaskList = ({ date, currentProgress }) => {
               <p className={Style.TextTime}>End: {timeEnd}</p>
             </div>
             <div className={Style.wrapperTaskDesc}>
-              <div className={Style.IMGUserTask}></div>
+              <div className={Style.IMGUserTask}>
+                {User.avatarURL && <img className={Style.UserPhoto} src={User.avatarURL} alt="UserPhoto"/>}
+              </div>
               <p className={classPriority(priority)}>{priority}</p>
               <div className={Style.wrapperIcon}>
                 <IconContext.Provider
