@@ -9,10 +9,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import {Loader} from "../../components/Loader/Loader"
 const RegisterPage = () => {
   const { loading } = useSelector(getAuth);
+ 
   const dispatch = useDispatch();
 
   const onRegister = (data) => {
     dispatch(register(data))
+
   }
 
 

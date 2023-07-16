@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import { getReviews } from 'redux/reviews/reviews-selectors';
 import { Navigation, Pagination, A11y,Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FaUserSecret } from 'react-icons/fa';
+// import { FaUserSecret } from 'react-icons/fa';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -18,12 +18,13 @@ export const Reviews = () => {
   const reviews = useSelector(getReviews);
   const screenWidth = window.screen.width
   
-   const element = reviews.map(({ rating, comment, name, _id }) => (
+   const element = reviews.map(({ rating, comment, name, _id,avatarURL }) => (
    <SwiperSlide key={_id}>
             <div className={Style.wrapperText} >
               <div className={Style.wrapperUser}>
-                <div className={Style.PhotoUser}><IconContext.Provider value={{ size: '26px', color: "#1e1e1e" }}><FaUserSecret/>  </IconContext.Provider></div>
-                <div>
+           {/* <div className={Style.PhotoUser}><IconContext.Provider value={{ size: '26px', color: "#1e1e1e" }}><FaUserSecret/>  </IconContext.Provider></div> */}
+           <img className={Style.PhotoUser} src={avatarURL} alt="UserPhoto"/>
+              <div>
              <p className={Style.NameUser}>{name}</p>
                   <StarsReviews stars={Number(rating)} />
                 </div>

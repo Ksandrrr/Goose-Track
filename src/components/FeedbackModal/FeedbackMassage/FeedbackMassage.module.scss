@@ -112,9 +112,9 @@ font-size: 14px;
     align-items: flex-end;
     width: 40px;
     height: 40px;
-// background: #6190E8;
-//     background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);
-//     background: linear-gradient(to right, #A7BFE8, #6190E8);
+    object-fit: cover;
+        object-position: center;
+
 
 background-color: white;
     border-radius: 50%;

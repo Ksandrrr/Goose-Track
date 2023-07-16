@@ -2,22 +2,27 @@ import styles from './LoginPage.module.scss';
 import { LuLogOut } from 'react-icons/lu';
 import Logo from '../../img/SignIn/elements1.png'
 import { NavLink } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../redux/auth/auth-operations';
 import { useState } from 'react';
+import { getAuth } from "../../redux/auth/auth-selectors"
 
  const Login = () => {
+   const { error } = useSelector(getAuth);
+ const [send, setSend] = useState(false)
   const [email, setEmail] = useState()
    const [password, setPassword] = useState()
   const dispatch = useDispatch();
   const handleSubmit = () => {
     dispatch(login({email: email, password: password}))
+    setSend(true)
   }
   return (
     <div className={styles.container}>
         {/* <img className={styles.img} src={Logo} alt="logoGoos" /> */}
       <div className={styles.form}>
         <h2 className={styles.text}>Log in</h2>
+          {error && send && <p className={styles.Error}>{error}</p>}
         <form className={styles.formInput}>
           <label className={styles.label} htmlFor="email">
             Email

@@ -143,12 +143,12 @@ export const CalendarComponent = () => {
     <>
       <div className={Style.calendar}>
         <div className={Style.calendarHeader}>
-          <h2>
-            {/* {currentMonth.toLocaleString('default', {
+          <p className={Style.CurrentMonthTextDark}>
+            {currentMonth.toLocaleString('en-US', {
               month: 'long',
               year: 'numeric',
-            })} */}
-          </h2>
+            })}
+          </p>
 
           <div className={theme ? Style.BtnWrapper : Style.BtnWrapperDark}>
             <button
