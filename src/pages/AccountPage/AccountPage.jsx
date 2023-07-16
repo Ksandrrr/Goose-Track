@@ -6,6 +6,7 @@ import { updateUserInfo } from '../../redux/auth/auth-operations';
 import {updateAvatar} from "../../redux/auth/auth-operations"
 import { getUser } from "../../redux/auth/auth-selectors"
 
+
 const AccountPage = () => {
   const dispatch = useDispatch();
 const user = useSelector(getUser)
@@ -13,11 +14,9 @@ const user = useSelector(getUser)
     dispatch(updateUserInfo(data));
   };
 const handleImageChange = e => {
-  const file = e.target.files[0]; // Получаем оригинальный файл
-  
+  const file = e.target.files[0]; 
   const formData = new FormData();
-  formData.append('avatar', file); // Добавляем оригинальный файл в FormData
-
+  formData.append('avatar', file); 
   dispatch(updateAvatar(formData));
 };
 
